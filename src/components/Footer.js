@@ -1,14 +1,19 @@
-// Updated Footer Component Code
+// src/components/Footer.js
 import React from "react";
 import styled from "styled-components";
 import theme from "../styles/theme";
 import { personalInfo, socialLinks } from "../data/data";
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaInstagram,
+  FaCode,
+} from "react-icons/fa";
 
 const FooterContainer = styled.footer`
-  background-color: ${theme.colors.darkNavy};
-  padding: 50px 0;
   text-align: center;
+  padding: 40px 20px;
 
   .social-icons {
     display: flex;
@@ -18,11 +23,12 @@ const FooterContainer = styled.footer`
 
     a {
       color: ${theme.colors.lightestSlate};
-      font-size: 24px;
-      transition: ${theme.transition};
+      font-size: 30px;
+      transition: transform 0.3s ease, color 0.3s ease;
 
       &:hover {
         color: ${theme.colors.green};
+        transform: scale(1.2);
       }
     }
   }
@@ -39,6 +45,12 @@ const FooterContainer = styled.footer`
         text-decoration: underline;
       }
     }
+  }
+
+  .credits {
+    margin-top: 20px;
+    font-size: 12px;
+    color: ${theme.colors.lightSlate};
   }
 `;
 
@@ -61,7 +73,7 @@ const Footer = () => (
             Icon = FaInstagram;
             break;
           default:
-            Icon = FaGithub;
+            Icon = FaCode;
         }
         return (
           <a
@@ -80,12 +92,17 @@ const Footer = () => (
       <p>
         Designed & Built by{" "}
         <a
-          href="https://yourwebsite.com"
+          href="https://www.linkedin.com/in/dibyajyoti-pradhan-83a649146/"
           target="_blank"
           rel="noopener noreferrer"
         >
           {personalInfo.name}
         </a>
+      </p>
+    </div>
+    <div className="credits">
+      <p>
+        © {new Date().getFullYear()} Dibyajyoti Pradhan. All Rights Reserved.
       </p>
     </div>
   </FooterContainer>

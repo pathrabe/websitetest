@@ -10,7 +10,7 @@ const AboutSection = styled.section`
 
   .content-wrapper {
     display: flex;
-    gap: 30px;
+    gap: 50px;
     align-items: center;
 
     @media (max-width: 768px) {
@@ -20,11 +20,23 @@ const AboutSection = styled.section`
 
     .profile-picture {
       flex: 1;
+      position: relative;
+      overflow: visible; // Allow glow effect to be visible
+      cursor: pointer;
+      outline: none;
+
       img {
-        width: 250px;
-        height: 250px;
+        width: 350px;
+        height: 350px;
         object-fit: cover;
-        border-radius: 50%;
+        border-radius: 50%; // Keeps the image a perfect circle
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover,
+        &:focus {
+          box-shadow: 0 0 30px 10px rgba(100, 255, 218, 0.5);
+          transform: translateY(-5px);
+        }
       }
     }
 
@@ -64,7 +76,7 @@ const About = () => {
     <AboutSection id="about">
       <div className="content-wrapper">
         <div className="profile-picture">
-          <img src="/profile.jpg" alt="Dibyajyoti Pradhan" />
+          <img tabIndex="0" src="/profile.jpg" alt="Dibyajyoti Pradhan" />
         </div>
         <div className="text-content">
           <h1>Hi, I'm {personalInfo.name}.</h1>

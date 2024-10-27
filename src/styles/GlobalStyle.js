@@ -11,15 +11,22 @@ const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: inherit;
   }
+
   strong {
-  text-decoration: underline;
-}
+    text-decoration: underline;
+  }
 
   body {
     margin: 0;
     width: 100%;
     min-height: 100%;
-    background-color: ${theme.colors.navy};
+    background: linear-gradient(
+      135deg,
+      ${theme.colors.lightNavy} 0%,
+      ${theme.colors.darkNavy} 33.3%,
+      ${theme.colors.lightNavy} 66.6%,
+      ${theme.colors.darkNavy} 100%
+    );
     color: ${theme.colors.slate};
     font-family: ${theme.fonts.main};
     font-size: 16px;
@@ -74,6 +81,7 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     vertical-align: middle;
   }
+
   section {
     min-height: 300px; /* Adjust as necessary to ensure visibility */
   }

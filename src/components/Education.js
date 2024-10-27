@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import theme from "../styles/theme";
-import { experiences } from "../data/data";
+import { education } from "../data/data";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-const ExperienceSection = styled.section`
+const EducationSection = styled.section`
   max-width: 1100px;
   margin: 100px auto;
   padding: 0 20px;
@@ -17,15 +17,15 @@ const ExperienceSection = styled.section`
   }
 `;
 
-const ExperienceList = styled.div`
+const EducationList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
   padding: 0;
 `;
 
-const ExperienceItem = styled.div`
-  background: rgba(17, 34, 64, 0.6); // Semi-transparent dark navy
+const EducationItem = styled.div`
+  background: rgba(17, 34, 64, 0.6);
   border-radius: 15px;
   padding: 30px;
   position: relative;
@@ -57,7 +57,7 @@ const ExperienceItem = styled.div`
   &:focus {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0, 255, 255, 0.2);
-    background: rgba(17, 34, 64, 0.8); // Slightly more opaque on hover
+    background: rgba(17, 34, 64, 0.8);
 
     &::before {
       opacity: 1;
@@ -73,19 +73,19 @@ const ExperienceItem = styled.div`
   }
 
   .right-column {
-    .title-company {
+    .title-school {
       display: flex;
       align-items: center;
       gap: 10px;
       margin-bottom: 10px;
 
-      .job-title {
+      .degree {
         font-size: 22px;
         color: ${theme.colors.lightestSlate};
         font-weight: bold;
       }
 
-      .company {
+      .school {
         font-size: 18px;
         color: ${theme.colors.green};
         display: flex;
@@ -116,7 +116,7 @@ const ExperienceItem = styled.div`
       }
     }
 
-    .responsibilities {
+    .details {
       color: ${theme.colors.lightSlate};
       font-size: 16px;
       line-height: 1.6;
@@ -125,30 +125,6 @@ const ExperienceItem = styled.div`
       p {
         margin-bottom: 10px;
         max-width: 800px;
-      }
-    }
-
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-
-      span {
-        background-color: rgba(2, 12, 27, 0.7);
-        color: ${theme.colors.lightestSlate};
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-size: 14px;
-        font-family: ${theme.fonts.mono};
-        transition: background-color 0.3s ease, transform 0.3s ease;
-        outline: none;
-        tabindex: 0;
-
-        &:hover,
-        &:focus {
-          background-color: ${theme.colors.greenTint};
-          transform: translateY(-3px);
-        }
       }
     }
   }
@@ -172,91 +148,64 @@ const ShowMoreButton = styled.button`
   }
 `;
 
-const Experience = () => {
-  const [showAll, setShowAll] = useState(false);
+const Education = () => {
+  const [showMore, setShowMore] = useState(false);
 
   const handleShowMore = () => {
-    setShowAll(!showAll);
+    setShowMore(!showMore);
   };
 
-  const experiencesToShow = showAll ? experiences : experiences.slice(0, 3);
+  const educationToShow = showMore ? education : education.slice(0, 1);
 
   return (
-    <ExperienceSection id="experience">
-      <h2>Work Experience</h2>
-      <ExperienceList>
-        {experiencesToShow.map(
-          ({
-            id,
-            position,
-            company,
-            url,
-            date,
-            location,
-            responsibilities,
-            techStack,
-          }) => (
-            <ExperienceItem
+    <EducationSection id="education">
+      <h2>Education</h2>
+      <EducationList>
+        {educationToShow.map(
+          ({ id, school, url, degree, duration, location, major, details }) => (
+            <EducationItem
               key={id}
               tabIndex="0"
-              style={{ transition: "all 0.6s ease" }}
+              onClick={() => {
+                window.open(url, "_blank", "noopener,noreferrer");
+              }}
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  window.open(url, "_blank", "noopener,noreferrer");
+                }
+              }}
             >
-              <div className="left-column">{date}</div>
+              <div className="left-column">{duration}</div>
               <div className="right-column">
-                <div className="title-company">
-                  <div
-                    className="company"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                    }}
-                  >
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      tabIndex="0"
-                      onKeyPress={(e) => {
-                        if (e.key === "Enter") {
-                          window.open(url, "_blank", "noopener,noreferrer");
-                        }
-                      }}
-                    >
-                      {company}
-                    </a>
-                  </div>
-                  <div className="job-title">{position}</div>
+                <div className="title-school">
+                  <div className="school">{school}</div>
+                  <div className="degree">{degree}</div>
                 </div>
                 <div className="location">
                   <FaMapMarkerAlt />
                   <span>{location}</span>
                 </div>
-                <div className="responsibilities">
-                  {responsibilities.map((item, idx) => (
-                    <p key={idx}>{item}</p>
-                  ))}
-                </div>
-                <div className="tech-stack">
-                  {techStack.map((tech, idx) => (
-                    <span key={idx} tabIndex="0">
-                      {tech}
-                    </span>
+                <div className="details">
+                  <p>{major}</p>
+                  {details.map((detail, idx) => (
+                    <p key={idx}>{detail}</p>
                   ))}
                 </div>
               </div>
-            </ExperienceItem>
+            </EducationItem>
           )
         )}
-      </ExperienceList>
-      {experiences.length > 3 && (
+      </EducationList>
+      {education.length > 1 && (
         <ShowMoreButton
           onClick={handleShowMore}
           style={{ transition: "all 0.6s ease" }}
         >
-          {showAll ? "Show Less" : "Show More"}
+          {showMore ? "Show Less" : "Show More"}
         </ShowMoreButton>
       )}
-    </ExperienceSection>
+    </EducationSection>
   );
 };
 
-export default Experience;
+export default Education;

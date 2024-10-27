@@ -3,9 +3,11 @@
 export const navLinks = [
   { id: 1, name: "About", url: "#about" },
   { id: 2, name: "Skills", url: "#skills" },
-  { id: 2, name: "Experience", url: "#experience" },
-  { id: 3, name: "Projects", url: "#projects" },
-  { id: 4, name: "Contact", url: "#contact" },
+  { id: 3, name: "Experience", url: "#experience" },
+  { id: 4, name: "Projects", url: "#projects" },
+  { id: 5, name: "Achievements", url: "#achievements" },
+  { id: 6, name: "Education", url: "#education" },
+  { id: 7, name: "Contact", url: "#contact" },
 ];
 
 export const socialLinks = [
@@ -15,14 +17,14 @@ export const socialLinks = [
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/dibyajyoti-pradhan-83a649146/",
   },
-  { id: 4, name: "Instagram", url: "https://www.instagram.com/shaky_coder/" },
+  { id: 3, name: "Instagram", url: "https://www.instagram.com/shaky_coder/" },
+  { id: 4, name: "LeetCode", url: "https://leetcode.com/u/dibyojyotipradhan/" },
 ];
-
 export const personalInfo = {
   name: "Dibyajyoti Pradhan",
   description: "Senior Software Engineer",
   about: [
-    `I'm a Senior Software Engineer with a background in developing innovative and scalable software solutions. I've worked with leading companies like <a href="https://en.wikipedia.org/wiki/HubSpot" target="_blank" rel="noopener noreferrer">HubSpot</a>, <a href="https://en.wikipedia.org/wiki/Meta_Platforms" target="_blank" rel="noopener noreferrer">Meta</a>, and <a href="https://en.wikipedia.org/wiki/Amazon_(company)" target="_blank" rel="noopener noreferrer">Amazon</a>, building robust systems that improve user experiences and drive business growth. Currently, I’m focusing on products at HubSpot, leading engineering teams and optimizing system performance. My expertise includes full-stack development, system architecture, and mentoring.`,
+    `I'm a Senior Software Engineer, based in London, with a background in developing innovative and scalable software solutions. I've worked with leading companies like <a href="https://en.wikipedia.org/wiki/HubSpot" target="_blank" rel="noopener noreferrer">HubSpot</a>, <a href="https://en.wikipedia.org/wiki/Meta_Platforms" target="_blank" rel="noopener noreferrer">Meta</a>, and <a href="https://en.wikipedia.org/wiki/Amazon_(company)" target="_blank" rel="noopener noreferrer">Amazon</a>, building robust systems that improve user experiences and drive business growth. Currently, I’m focusing on products at HubSpot, leading engineering teams and optimizing system performance. My expertise includes full-stack development, system architecture, and mentoring.`,
     `I have experience in various domains, including <strong>Payments</strong>, <strong>Advertisement</strong>, and <strong>Platform</strong> domains. Additionally, I'm currently exploring and building some not so <strong>High Frequency Trading Bots</strong> on the side.`,
     `Outside of work, I love to travel, play chess, run in marathons, and work out to stay fit and active.`,
   ],
@@ -33,9 +35,9 @@ export const personalInfo = {
   contact: {
     heading: "Get In Touch",
     message: `
-              I'm currently open to new opportunities. Whether you have a question or
-              just want to say hi, feel free to drop a message!
-            `,
+                  Whether you have a question or
+                  just want to say hi, feel free to drop a message!
+                `,
     email: "dibyojyotipradhan@gmail.com",
   },
 };
@@ -43,7 +45,7 @@ export const personalInfo = {
 export const skills = [
   {
     category: "Languages",
-    items: ["C++", "Python", "Java", "JavaScript", "SQL"],
+    items: ["C++", "Python", "Java", "JavaScript", "TypeScript", "SQL"],
   },
   {
     category: "Frameworks",
@@ -82,18 +84,38 @@ export const experiences = [
     id: 1,
     position: "Senior Software Engineer",
     company: "HubSpot",
+    location: "London",
     url: "https://en.wikipedia.org/wiki/HubSpot",
     date: "07/2024 - Present",
     responsibilities: [
       "Spearheaded the design and implementation of Account Insights, enabling real-time recommendations, optimizing return on investment, and increasing user retention by 10%.",
       "Led a team of 4 engineers and provided mentorship to junior developers, driving team development and ensuring successful project delivery.",
     ],
-    techStack: ["Java", "Spring MVC", "React"],
+    techStack: [
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "SQL",
+      "React",
+      "Google Guice",
+      "HTML",
+      "CSS",
+      "GraphQL",
+      "Kafka",
+      "AWS",
+      "Kubernetes",
+      "Vitess DB",
+      "MySQL",
+      "HBase",
+      "Backend",
+      "Frontend",
+    ],
   },
   {
     id: 2,
     position: "Software Engineer II",
     company: "Meta",
+    location: "London",
     url: "https://en.wikipedia.org/wiki/Meta_Platforms",
     date: "04/2022 - 05/2024",
     responsibilities: [
@@ -102,12 +124,25 @@ export const experiences = [
       "Revamped the duplication flow in AMA to align with ODAX objectives, resulting in a significant 14% increase in revenue and an 18% growth in ad duplications.",
       "Collaborated on implementing measurable enhancements, leading to improved performance metrics and increased user engagement within AMA.",
     ],
-    techStack: ["React", "GraphQL", "Relay"],
+    techStack: [
+      "JavaScript",
+      "TypeScript",
+      "Hack",
+      "SQL",
+      "React Native",
+      "GraphQL (Relay)",
+      "A/B Testing (Experimentation)",
+      "TAO",
+      "Scuba",
+      "Presto",
+      "Frontend",
+    ],
   },
   {
     id: 3,
     position: "Software Development Engineer II",
     company: "Amazon",
+    location: "Hyderabad",
     url: "https://en.wikipedia.org/wiki/Amazon_(company)",
     date: "10/2021 - 02/2022",
     responsibilities: [
@@ -115,12 +150,24 @@ export const experiences = [
       "Engineered an innovative ‘Offline Architecture’ for the app, eliminating perceived latency and improving user experience.",
       "Streamlined crawler latency in Daily MIS Settlement Report, reducing processing time from 3 hours to 10 minutes, resolving delays for 70+ online and organized merchants.",
     ],
-    techStack: ["Java", "Android", "AWS"],
+    techStack: [
+      "Java",
+      "JavaScript",
+      "Python",
+      "MySQL",
+      "AWS",
+      "React Native",
+      "Spring MVC",
+      "DynamoDB",
+      "Frontend",
+      "Backend",
+    ],
   },
   {
     id: 4,
     position: "Software Development Engineer I",
     company: "Amazon",
+    location: "Hyderabad",
     url: "https://en.wikipedia.org/wiki/Amazon_(company)",
     date: "07/2019 - 09/2021",
     responsibilities: [
@@ -128,12 +175,23 @@ export const experiences = [
       "Played a pivotal role in a team of three, facilitating 5 million merchant engagements at launch.",
       "Provided mentorship to an SDE for promotion and an intern for a pre-placement offer, recognized with a promotion to Software Development Engineer-2.",
     ],
-    techStack: ["Java", "React Native", "Node.js"],
+    techStack: [
+      "Java",
+      "JavaScript",
+      "AWS",
+      "React Native",
+      "Spring MVC",
+      "DynamoDB",
+      "React",
+      "Full Stack",
+      "RESTful APIs",
+    ],
   },
   {
     id: 5,
     position: "Software Development Engineer Intern",
     company: "Amazon",
+    location: "Hyderabad",
     url: "https://en.wikipedia.org/wiki/Amazon_(company)",
     date: "05/2018 - 07/2018",
     responsibilities: [
@@ -141,39 +199,130 @@ export const experiences = [
       "Created a comprehensive full-stack admin tool to monitor and manage sequence configurations in real-time.",
       "Successfully transitioned from internship to a full-time position, demonstrating strong performance and commitment to excellence.",
     ],
-    techStack: ["Java", "AWS", "Spring MVC"],
+    techStack: [
+      "Java",
+      "AWS",
+      "Spring MVC",
+      "DynamoDB",
+      "Backend",
+      "RESTful APIs",
+      "Micro-service Architecture",
+    ],
   },
 ];
 
 export const projects = [
   {
     id: 1,
-    title: "Account Insights at HubSpot",
+    title: "Concurrency In Java: Web Crawler",
     description:
-      "A project focused on providing real-time recommendations to optimize return on investment and increase user retention.",
-    techStack: ["Java", "Spring MVC", "React"],
-    url: "https://github.com/Dibyajyoti-Pradhan/account-insights",
-    external: "https://project-account-insights.com",
-    stars: 150,
+      "Developed a concurrent web crawler in Java to explore and index pages within a specific domain. The crawler processes URLs from a given starting point, printing out each visited URL and its links while restricting itself to the specified domain.",
+    techStack: ["Java", "Concurrency", "Maven", "JUnit", "Lombok"],
+    url: "https://github.com/Dibyajyoti-Pradhan/Crawler",
+    external: "https://github.com/Dibyajyoti-Pradhan/Crawler",
+    stars: 0,
   },
   {
     id: 2,
-    title: "Mid-Flight Recommendation Flow at Meta",
+    title: "Command Line Application: Cron Parser",
     description:
-      "Enhanced ad placements and campaign budget settings, improving revenue and user engagement for Ads Manager App.",
-    techStack: ["React", "GraphQL", "Relay"],
-    url: "https://github.com/Dibyajyoti-Pradhan/mid-flight-recommendation",
-    external: "https://project-mid-flight.com",
-    stars: 95,
+      "Implemented a cron expression parser in Java to expand cron strings into detailed schedules. Parses five fields (minute, hour, day of month, month, day of week) and outputs the schedule in a formatted table.",
+    techStack: ["Java", "Maven", "CLI Development", "JUnit"],
+    url: "https://github.com/Dibyajyoti-Pradhan/CronParser",
+    external: "https://github.com/Dibyajyoti-Pradhan/CronParser",
+    stars: 0,
   },
   {
     id: 3,
-    title: "Amazon Pay for Business App",
+    title: "CSV Parser: Cookie Log",
     description:
-      "Expanded the Amazon Pay for Business app user base, optimized latency, and engineered offline capabilities.",
-    techStack: ["Java", "Android", "AWS"],
-    url: "https://github.com/Dibyajyoti-Pradhan/amazon-pay-business",
-    external: "https://amazon-pay-business.com",
-    stars: 200,
+      "Developed a command-line application in Java to parse log files and determine the most active cookies for a given date. Processes CSV logs to provide insights into cookie activity.",
+    techStack: ["Java", "Maven", "JUnit", "Lombok", "Hashing"],
+    url: "https://github.com/Dibyajyoti-Pradhan/Cookie",
+    external: "https://github.com/Dibyajyoti-Pradhan/Cookie",
+    stars: 0,
+  },
+  {
+    id: 4,
+    title: "Pokemon - Advanced HTML & CSS Project",
+    description:
+      "An advanced CSS project for Pokemon lovers, showcasing how far UI can be developed without JavaScript. Built using advanced HTML, CSS, SASS, BEM, and 7-1 Architecture.",
+    techStack: ["HTML", "CSS", "SASS", "BEM", "7-1 Architecture"],
+    url: "https://github.com/Dibyajyoti-Pradhan/Iris",
+    external: "https://github.com/Dibyajyoti-Pradhan/Iris",
+    stars: 0,
+  },
+  {
+    id: 5,
+    title: "Netflix - React",
+    description:
+      "A Netflix clone built from scratch using React, Firebase Authentication, and Styled Components. The project demonstrates advanced component usage and state management.",
+    techStack: ["React", "Firebase", "Styled Components"],
+    url: "https://github.com/Dibyajyoti-Pradhan/Netflix",
+    external: "https://github.com/Dibyajyoti-Pradhan/Netflix",
+    stars: 0,
+  },
+];
+
+export const achievements = [
+  {
+    id: 1,
+    title: "GenAI for Ad Creative",
+    description:
+      "Introduced GenAI (Llama 2) for Ad Creatives in Meta Ads Manager App in Meta GenAI Hackathon, enhancing ad creative capabilities.",
+  },
+  {
+    id: 2,
+    title: "Innovation Award",
+    description:
+      'Received the "Most Innovative Award" at the Amazon Pay EDH Hackathon for pioneering a near-zero latency model for the Amazon Pay For Business App.',
+  },
+  {
+    id: 3,
+    title: "Scholarship Recognition",
+    description:
+      "Recognized with the Jagadis Bose National Talent Search Scholarship, selected as one of 56 scholars from over 3000 applicants from top-tier colleges.",
+  },
+  // Add more achievements if necessary
+];
+export const education = [
+  {
+    id: 1,
+    school: "Jadavpur University",
+    url: "https://en.wikipedia.org/wiki/Jadavpur_University",
+    degree: "Bachelor Of Engineering",
+    duration: "2015 - 2019",
+    location: "Kolkata, India",
+    major: "Electronics and Telecommunication Engineering",
+    details: ["CGPA: 8.05", "Award Senior JBSNTS Scholarship"],
+  },
+  {
+    id: 2,
+    school: "Krishnath College School",
+    url: "https://en.wikipedia.org/wiki/Krishnath_College_School/",
+    degree: "Higher Secondary (WBCHSE)",
+    duration: "2013 - 2015",
+    location: "West Bengal, India",
+    major: "",
+    details: [
+      "Percentage: 94.2%",
+      "Percentile: 99.63%",
+      "Physics 100 | Maths 95 | English 92",
+      "WBJEE: 335 (GEN | Engg.) | 3351 (GEN | Med)",
+      "Also cracked IISER Kolkata and IIEST (Mechanical)",
+    ],
+  },
+  {
+    id: 3,
+    school: "Mary Immaculate School",
+    url: "https://mismsd.in/",
+    degree: "Secondary (ICSE)",
+    duration: "2013",
+    location: "West Bengal, India",
+    major: "",
+    details: [
+      "Percentage: 90%",
+      "Maths 97 | Computer Application 97 | Science 90",
+    ],
   },
 ];

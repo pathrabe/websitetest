@@ -138,7 +138,7 @@ const Header = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          My Résumé
+          Download Résumé
         </a>
       </div>
     </HeaderContainer>

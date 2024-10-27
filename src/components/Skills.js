@@ -14,6 +14,7 @@ const SkillsSection = styled.section`
     color: ${theme.colors.lightestSlate};
     text-align: center;
   }
+
   .skills {
     .skill-category {
       margin-bottom: 20px;
@@ -25,6 +26,7 @@ const SkillsSection = styled.section`
         color: ${theme.colors.lightestSlate};
         font-weight: bold;
         flex: 0.2;
+        display: flex;
         text-align: center;
         align-items: center;
       }
@@ -47,8 +49,11 @@ const SkillsSection = styled.section`
           transition: ${theme.transition};
           overflow: hidden;
           cursor: pointer;
+          outline: none;
+          tabindex: 0;
 
-          &:hover {
+          &:hover,
+          &:focus {
             box-shadow: 0px 0px 15px 5px ${theme.colors.green};
             transform: scale(1.05);
           }
@@ -68,7 +73,9 @@ const Skills = () => {
             <h3>{skillGroup.category}</h3>
             <div className="skill-items">
               {skillGroup.items.map((skill, skillIdx) => (
-                <span key={skillIdx}>{skill}</span>
+                <span key={skillIdx} tabIndex="0">
+                  {skill}
+                </span>
               ))}
             </div>
           </div>
