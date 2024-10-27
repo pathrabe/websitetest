@@ -76,7 +76,11 @@ const About = () => {
     <AboutSection id="about">
       <div className="content-wrapper">
         <div className="profile-picture">
-          <img tabIndex="0" src="/profile.jpg" alt="Dibyajyoti Pradhan" />
+          <img
+            tabIndex="0"
+            src={`${process.env.PUBLIC_URL}/profile.jpg`}
+            alt="Dibyajyoti Pradhan"
+          />
         </div>
         <div className="text-content">
           <h1>Hi, I'm {personalInfo.name}.</h1>
