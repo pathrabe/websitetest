@@ -14,7 +14,7 @@ const AppContainer = styled.div`
 `;
 
 const LeftColumn = styled.div`
-  width: 300px;
+  width: 350px;
   padding: 20px;
   position: fixed;
   height: 100vh;
