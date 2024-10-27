@@ -20,7 +20,7 @@ export const socialLinks = [
 export const personalInfo = {
   name: "Dibyajyoti Pradhan",
   description: "Senior Software Engineer",
-  about: `I'm a Senior Software Engineer with a background in developing innovative and scalable software solutions. I've worked with leading companies like <a href="https://en.wikipedia.org/wiki/HubSpot" target="_blank" rel="noopener noreferrer">HubSpot</a>, <a href="https://en.wikipedia.org/wiki/Meta_Platforms" target="_blank" rel="noopener noreferrer">Meta</a>, and <a href="https://en.wikipedia.org/wiki/Amazon_(company)" target="_blank" rel="noopener noreferrer">Amazon</a>, building robust systems that improve user experiences and drive business growth. Currently, I’m focusing on human-centered products at HubSpot, leading engineering teams and optimizing system performance. My expertise includes full-stack development, system architecture, and mentoring.`,
+  about: `I'm a Senior Software Engineer with a background in developing innovative and scalable software solutions. I've worked with leading companies like <a href="https://en.wikipedia.org/wiki/HubSpot" target="_blank" rel="noopener noreferrer">HubSpot</a>, <a href="https://en.wikipedia.org/wiki/Meta_Platforms" target="_blank" rel="noopener noreferrer">Meta</a>, and <a href="https://en.wikipedia.org/wiki/Amazon_(company)" target="_blank" rel="noopener noreferrer">Amazon</a>, building robust systems that improve user experiences and drive business growth. Currently, I’m focusing on products at HubSpot, leading engineering teams and optimizing system performance. My expertise includes full-stack development, system architecture, and mentoring.`,
   currentCompany: {
     name: "HubSpot",
     url: "https://en.wikipedia.org/wiki/HubSpot",
@@ -36,36 +36,40 @@ export const personalInfo = {
 };
 
 export const skills = [
-  "C++",
-  "Python",
-  "Java",
-  "JavaScript",
-  "SQL",
-  "React",
-  "React Native",
-  "Spring MVC",
-  "Google Guice",
-  "HTML",
-  "CSS",
-  "GraphQL",
-  "Git",
-  "Docker",
-  "Kubernetes",
-  "Kafka",
-  "AWS",
-  "MySQL",
-  "MongoDB",
-  "DynamoDB",
-  "Vitess DB",
-  "RESTful APIs",
-  "Backend Development",
-  "Microservices",
-  "Agile",
-  "System Design",
-  "Data Structures",
-  "Algorithms",
-  "OOP",
-  "Design Patterns",
+  {
+    category: "Languages",
+    items: ["C++", "Python", "Java", "JavaScript", "SQL"],
+  },
+  {
+    category: "Frameworks",
+    items: ["React", "React Native", "Spring MVC", "Google Guice"],
+  },
+  {
+    category: "Web Technologies",
+    items: ["HTML", "CSS", "GraphQL"],
+  },
+  {
+    category: "Tools",
+    items: ["Git", "Docker", "Kubernetes", "Kafka", "AWS"],
+  },
+  {
+    category: "Databases",
+    items: ["MySQL", "MongoDB", "DynamoDB", "Vitess DB"],
+  },
+  {
+    category: "Other",
+    items: [
+      "RESTful APIs",
+      "Backend Development",
+      "Microservices",
+      "Agile",
+      "System Design",
+      "Data Structures",
+      "Algorithms",
+      "OOP",
+      "Design Patterns",
+    ],
+  },
 ];
 
 export const experiences = [

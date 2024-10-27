@@ -6,7 +6,7 @@ import { personalInfo } from "../data/data";
 
 const ContactSection = styled.section`
   max-width: 600px;
-  margin: 150px auto;
+  margin: 100px auto;
   padding: 0 20px;
   text-align: center;
 

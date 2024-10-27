@@ -6,8 +6,8 @@ import { projects } from "../data/data";
 import { FaGithub, FaExternalLinkAlt, FaStar } from "react-icons/fa";
 
 const ProjectsSection = styled.section`
-  max-width: 1200px;
-  margin: 150px auto;
+  max-width: 1100px;
+  margin: 100px auto;
   padding: 0 20px;
 
   h2 {

@@ -71,6 +71,9 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     vertical-align: middle;
   }
+  section {
+    min-height: 300px; /* Adjust as necessary to ensure visibility */
+  }
 `;
 
 export default GlobalStyle;

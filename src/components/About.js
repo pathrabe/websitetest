@@ -1,11 +1,12 @@
 // src/components/About.js
+
 import React from "react";
 import styled from "styled-components";
 import theme from "../styles/theme";
 import { personalInfo, skills } from "../data/data";
 
 const AboutSection = styled.section`
-  max-width: 1200px; // Increased by 10%
+  max-width: 1100px; // Increased by 10%
   margin: 150px auto 0;
   padding: 0 20px;
 
@@ -59,19 +60,42 @@ const AboutSection = styled.section`
   }
 
   .skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
     margin-top: 40px;
 
-    span {
-      background-color: ${theme.colors.lightNavy};
-      color: ${theme.colors.lightestSlate};
-      padding: 10px 15px;
-      border-radius: ${theme.borderRadius};
-      font-size: 14px;
-      font-family: ${theme.fonts.mono};
+    .skill-category {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: row;
+      h3 {
+        font-size: 20px;
+        color: ${theme.colors.lightestSlate};
+        ${"" /* margin-bottom: 10px; */}
+        font-weight: bold;
+        ${"" /* border-bottom: 2px solid ${theme.colors.slate}; */}
+
+        display: flex;
+        flex-direction: row;
+        flex: 0.2;
+        text-align: center;
+        align-items: center;
+      }
+
+      .skill-items {
+        display: flex;
+        flex-direction: row;
+        flex: 0.8;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        span {
+          background-color: ${theme.colors.lightNavy};
+          color: ${theme.colors.lightestSlate};
+          padding: 10px 15px;
+          border-radius: ${theme.borderRadius};
+          font-size: 14px;
+          font-family: ${theme.fonts.mono};
+        }
+      }
     }
   }
 `;
@@ -90,8 +114,15 @@ const About = () => {
         </div>
       </div>
       <div className="skills">
-        {skills.map((skill, idx) => (
-          <span key={idx}>{skill}</span>
+        {skills.map((skillGroup, idx) => (
+          <div className="skill-category" key={idx}>
+            <h3>{skillGroup.category}</h3>
+            <div className="skill-items">
+              {skillGroup.items.map((skill, skillIdx) => (
+                <span key={skillIdx}>{skill}</span>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </AboutSection>

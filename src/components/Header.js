@@ -1,5 +1,5 @@
 // src/components/Header.js
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import theme from "../styles/theme";
 import { navLinks, personalInfo } from "../data/data";
@@ -20,6 +20,7 @@ const HeaderContainer = styled.header`
 
   .nav-links {
     margin-top: 50px;
+    width: 100%;
 
     ul {
       list-style: none;
@@ -36,6 +37,11 @@ const HeaderContainer = styled.header`
           padding: 5px;
           transition: ${theme.transition};
           cursor: pointer;
+
+          &.active {
+            color: ${theme.colors.green};
+            font-weight: bold;
+          }
 
           &:hover,
           &:focus {
@@ -68,6 +74,34 @@ const HeaderContainer = styled.header`
 `;
 
 const Header = () => {
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "-100px 0px -100px 0px", // This will add some margin to trigger earlier
+      threshold: 0.4,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, options);
+
+    const sections = document.querySelectorAll("section");
+    console.log(sections);
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
   return (
     <HeaderContainer>
       <div className="logo">
@@ -79,6 +113,7 @@ const Header = () => {
             <li key={id}>
               <a
                 href={url}
+                className={activeSection === url.substring(1) ? "active" : ""}
                 onClick={(e) => {
                   e.preventDefault();
                   const element = document.getElementById(url.substring(1));

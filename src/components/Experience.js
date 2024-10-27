@@ -5,8 +5,8 @@ import { experiences } from "../data/data";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const ExperienceSection = styled.section`
-  max-width: 1200px; // Increased width for better content fit
-  margin: 150px auto;
+  max-width: 1100px; // Increased width for better content fit
+  margin: 100px auto;
   padding: 0 20px; // Ensure consistent padding on left and right
 
   h2 {
@@ -114,7 +114,7 @@ const ExperienceItem = styled.div`
 
 const Experience = () => (
   <ExperienceSection id="experience">
-    <h2>Where I've Worked</h2>
+    <h2>Experience</h2>
     <ExperienceList>
       {experiences.map(
         ({ id, position, company, url, date, responsibilities, techStack }) => (
