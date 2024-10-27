@@ -11,6 +11,9 @@ const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: inherit;
   }
+  strong {
+  text-decoration: underline;
+}
 
   body {
     margin: 0;

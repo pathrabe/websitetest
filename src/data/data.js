@@ -2,6 +2,7 @@
 
 export const navLinks = [
   { id: 1, name: "About", url: "#about" },
+  { id: 2, name: "Skills", url: "#skills" },
   { id: 2, name: "Experience", url: "#experience" },
   { id: 3, name: "Projects", url: "#projects" },
   { id: 4, name: "Contact", url: "#contact" },
@@ -20,7 +21,11 @@ export const socialLinks = [
 export const personalInfo = {
   name: "Dibyajyoti Pradhan",
   description: "Senior Software Engineer",
-  about: `I'm a Senior Software Engineer with a background in developing innovative and scalable software solutions. I've worked with leading companies like <a href="https://en.wikipedia.org/wiki/HubSpot" target="_blank" rel="noopener noreferrer">HubSpot</a>, <a href="https://en.wikipedia.org/wiki/Meta_Platforms" target="_blank" rel="noopener noreferrer">Meta</a>, and <a href="https://en.wikipedia.org/wiki/Amazon_(company)" target="_blank" rel="noopener noreferrer">Amazon</a>, building robust systems that improve user experiences and drive business growth. Currently, I’m focusing on products at HubSpot, leading engineering teams and optimizing system performance. My expertise includes full-stack development, system architecture, and mentoring.`,
+  about: [
+    `I'm a Senior Software Engineer with a background in developing innovative and scalable software solutions. I've worked with leading companies like <a href="https://en.wikipedia.org/wiki/HubSpot" target="_blank" rel="noopener noreferrer">HubSpot</a>, <a href="https://en.wikipedia.org/wiki/Meta_Platforms" target="_blank" rel="noopener noreferrer">Meta</a>, and <a href="https://en.wikipedia.org/wiki/Amazon_(company)" target="_blank" rel="noopener noreferrer">Amazon</a>, building robust systems that improve user experiences and drive business growth. Currently, I’m focusing on products at HubSpot, leading engineering teams and optimizing system performance. My expertise includes full-stack development, system architecture, and mentoring.`,
+    `I have experience in various domains, including <strong>Payments</strong>, <strong>Advertisement</strong>, and <strong>Platform</strong> domains. Additionally, I'm currently exploring and building some not so <strong>High Frequency Trading Bots</strong> on the side.`,
+    `Outside of work, I love to travel, play chess, run in marathons, and work out to stay fit and active.`,
+  ],
   currentCompany: {
     name: "HubSpot",
     url: "https://en.wikipedia.org/wiki/HubSpot",
@@ -28,9 +33,9 @@ export const personalInfo = {
   contact: {
     heading: "Get In Touch",
     message: `
-          I'm currently open to new opportunities. Whether you have a question or
-          just want to say hi, feel free to drop a message!
-        `,
+              I'm currently open to new opportunities. Whether you have a question or
+              just want to say hi, feel free to drop a message!
+            `,
     email: "dibyojyotipradhan@gmail.com",
   },
 };
@@ -116,6 +121,7 @@ export const experiences = [
     id: 4,
     position: "Software Development Engineer I",
     company: "Amazon",
+    url: "https://en.wikipedia.org/wiki/Amazon_(company)",
     date: "07/2019 - 09/2021",
     responsibilities: [
       "Orchestrated the development of 18 major pages for the Amazon Pay for Business app.",
@@ -128,6 +134,7 @@ export const experiences = [
     id: 5,
     position: "Software Development Engineer Intern",
     company: "Amazon",
+    url: "https://en.wikipedia.org/wiki/Amazon_(company)",
     date: "05/2018 - 07/2018",
     responsibilities: [
       "Developed automation for sequence generation in a tier-1 service, benefiting over 100 developer teams in Amazon.",

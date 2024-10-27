@@ -1,0 +1,81 @@
+import React from "react";
+import styled from "styled-components";
+import theme from "../styles/theme";
+import { skills } from "../data/data";
+
+const SkillsSection = styled.section`
+  max-width: 1100px;
+  margin: 100px auto 0;
+  padding: 0 20px;
+
+  h2 {
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: ${theme.colors.lightestSlate};
+    text-align: center;
+  }
+  .skills {
+    .skill-category {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: row;
+
+      h3 {
+        font-size: 20px;
+        color: ${theme.colors.lightestSlate};
+        font-weight: bold;
+        flex: 0.2;
+        text-align: center;
+        align-items: center;
+      }
+
+      .skill-items {
+        display: flex;
+        flex-direction: row;
+        flex: 0.8;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        span {
+          background-color: ${theme.colors.lightNavy};
+          color: ${theme.colors.lightestSlate};
+          padding: 10px 15px;
+          border-radius: ${theme.borderRadius};
+          font-size: 14px;
+          font-family: ${theme.fonts.mono};
+          position: relative;
+          transition: ${theme.transition};
+          overflow: hidden;
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: 0px 0px 15px 5px ${theme.colors.green};
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+`;
+
+const Skills = () => {
+  return (
+    <SkillsSection id="skills">
+      <h2>Skills</h2>
+      <div className="skills">
+        {skills.map((skillGroup, idx) => (
+          <div className="skill-category" key={idx}>
+            <h3>{skillGroup.category}</h3>
+            <div className="skill-items">
+              {skillGroup.items.map((skill, skillIdx) => (
+                <span key={skillIdx}>{skill}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </SkillsSection>
+  );
+};
+
+export default Skills;

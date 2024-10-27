@@ -43,8 +43,7 @@ const HeaderContainer = styled.header`
             font-weight: bold;
           }
 
-          &:hover,
-          &:focus {
+          &:hover {
             color: ${theme.colors.green};
             text-decoration: underline;
           }
@@ -76,6 +75,7 @@ const HeaderContainer = styled.header`
 const Header = () => {
   const [activeSection, setActiveSection] = useState("");
 
+  console.log("activeSection", activeSection);
   useEffect(() => {
     const options = {
       root: null,

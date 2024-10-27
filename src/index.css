@@ -11,16 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-#mouse-shadow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 500px;  /* Ensure width and height are equal to keep the shadow circular */
-  height: 500px;
-  background: radial-gradient(circle, rgba(0, 255, 255, 0.3), transparent);
-  pointer-events: none;  /* Don't interfere with user interactions */
-  mix-blend-mode: overlay;  /* Makes the shadow blend naturally with the content */
-  border-radius: 50%;  /* Make it a perfect circle */
-  transform: translate(-50%, -50%);  /* Center the shadow relative to the mouse */
-  transition: all 0.05s ease-out;
-}
