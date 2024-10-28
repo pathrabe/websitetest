@@ -83,13 +83,20 @@ const ProjectCard = styled.div`
     gap: 10px;
 
     span {
-      background: rgba(17, 34, 64, 0.6);
+      background-color: rgba(2, 12, 27, 0.7);
       color: ${theme.colors.lightestSlate};
-      padding: 5px 10px;
-      border-radius: ${theme.borderRadius};
+      padding: 5px 15px;
+      border-radius: 20px;
       font-size: 14px;
       font-family: ${theme.fonts.mono};
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      outline: none;
+      tabindex: 0;
+
+      &:hover,
+      &:focus {
+        background-color: ${theme.colors.greenTint};
+        transform: translateY(-3px);
     }
   }
 `;
