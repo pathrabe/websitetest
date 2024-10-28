@@ -1,5 +1,4 @@
-// src/App.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import GlobalStyle from "./styles/GlobalStyle";
 import Header from "./components/Header";
@@ -24,10 +23,7 @@ const LeftColumn = styled.div`
   justify-content: space-between;
 
   @media (max-width: 768px) {
-    width: 100%;
-    position: static;
-    height: auto;
-    padding: 10px;
+    display: none; /* Hide the sidebar on mobile */
   }
 `;
 
@@ -42,19 +38,50 @@ const RightColumn = styled.div`
   }
 `;
 
+const MobileMessage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: ${theme.colors.darkNavy};
+  color: ${theme.colors.lightestSlate};
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+`;
+
 function App() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); // Check initial screen width
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <Router>
       <GlobalStyle />
-      <AppContainer>
-        <LeftColumn>
-          <Header />
-          <Footer />
-        </LeftColumn>
-        <RightColumn>
-          <Home />
-        </RightColumn>
-      </AppContainer>
+      {isMobile ? (
+        <MobileMessage>
+          I am working on the mobile version. Please open in desktop to view
+          this website for now.
+        </MobileMessage>
+      ) : (
+        <AppContainer>
+          <LeftColumn>
+            <Header />
+            <Footer />
+          </LeftColumn>
+          <RightColumn>
+            <Home />
+          </RightColumn>
+        </AppContainer>
+      )}
     </Router>
   );
 }
