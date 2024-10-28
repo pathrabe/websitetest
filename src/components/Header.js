@@ -75,7 +75,6 @@ const HeaderContainer = styled.header`
 const Header = () => {
   const [activeSection, setActiveSection] = useState("");
 
-  console.log("activeSection", activeSection);
   useEffect(() => {
     const options = {
       root: null,
@@ -92,7 +91,6 @@ const Header = () => {
     }, options);
 
     const sections = document.querySelectorAll("section");
-    console.log(sections);
     sections.forEach((section) => {
       observer.observe(section);
     });
