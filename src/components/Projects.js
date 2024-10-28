@@ -1,6 +1,4 @@
-// src/components/Projects.js
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import theme from "../styles/theme";
 import { projects } from "../data/data";
@@ -30,7 +28,7 @@ const ProjectsGrid = styled.div`
 `;
 
 const ProjectCard = styled.div`
-  background: rgba(17, 34, 64, 0.6); // Semi-transparent dark navy
+  background: rgba(17, 34, 64, 0.6);
   border-radius: ${theme.borderRadius};
   padding: 20px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -40,47 +38,17 @@ const ProjectCard = styled.div`
   outline: none;
   cursor: pointer;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: -20%;
-    left: -20%;
-    width: 140%;
-    height: 140%;
-    background: radial-gradient(circle, rgba(100, 255, 218, 0.15), transparent);
-    opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    transform: scale(0.9);
-    filter: blur(30px);
-  }
-
   &:hover,
   &:focus {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0, 255, 255, 0.2);
-    background: rgba(17, 34, 64, 0.8); // Slightly more opaque on hover
-
-    &::before {
-      opacity: 1;
-      transform: scale(1.1);
-    }
+    background: rgba(17, 34, 64, 0.8);
   }
 
   .project-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    .star-rating {
-      display: flex;
-      align-items: center;
-      color: ${theme.colors.green};
-      font-size: 14px;
-
-      svg {
-        margin-right: 5px;
-      }
-    }
 
     .project-links {
       a {
@@ -115,46 +83,13 @@ const ProjectCard = styled.div`
     gap: 10px;
 
     span {
-      background: rgba(17, 34, 64, 0.6); // Semi-transparent dark navy
+      background: rgba(17, 34, 64, 0.6);
       color: ${theme.colors.lightestSlate};
       padding: 5px 10px;
       border-radius: ${theme.borderRadius};
       font-size: 14px;
       font-family: ${theme.fonts.mono};
       transition: transform 0.4s ease, box-shadow 0.4s ease;
-      position: relative;
-      outline: none;
-      cursor: pointer;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: -20%;
-        left: -20%;
-        width: 140%;
-        height: 140%;
-        background: radial-gradient(
-          circle,
-          rgba(100, 255, 218, 0.15),
-          transparent
-        );
-        opacity: 0;
-        transition: opacity 0.4s ease, transform 0.4s ease;
-        transform: scale(0.9);
-        filter: blur(30px);
-      }
-
-      &:hover,
-      &:focus {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px -20px ${theme.colors.darkNavy};
-        background: rgba(17, 34, 64, 0.8);
-
-        &::before {
-          opacity: 1;
-          transform: scale(1.1);
-        }
-      }
     }
   }
 `;
@@ -179,12 +114,29 @@ const ShowMoreButton = styled.button`
 
 const Projects = () => {
   const [showMore, setShowMore] = useState(false);
+  const [initialProjectsToShow, setInitialProjectsToShow] = useState(4);
+
+  useEffect(() => {
+    const updateProjectsToShow = () => {
+      if (window.innerWidth < 768) {
+        setInitialProjectsToShow(2); // Show 2 projects on mobile
+      } else {
+        setInitialProjectsToShow(4); // Show 4 projects on desktop
+      }
+    };
+
+    updateProjectsToShow();
+    window.addEventListener("resize", updateProjectsToShow);
+    return () => window.removeEventListener("resize", updateProjectsToShow);
+  }, []);
+
+  const projectsToShow = showMore
+    ? projects
+    : projects.slice(0, initialProjectsToShow);
 
   const handleShowMore = () => {
     setShowMore(!showMore);
   };
-
-  const projectsToShow = showMore ? projects : projects.slice(0, 4);
 
   return (
     <ProjectsSection id="projects">
@@ -203,7 +155,6 @@ const Projects = () => {
                   window.open(external || url, "_blank", "noopener,noreferrer");
                 }
               }}
-              style={{ transition: "all 0.6s ease" }}
             >
               <div className="project-top">
                 <div className="project-links">
@@ -232,11 +183,8 @@ const Projects = () => {
           )
         )}
       </ProjectsGrid>
-      {projects.length > 4 && (
-        <ShowMoreButton
-          onClick={handleShowMore}
-          style={{ transition: "all 0.6s ease" }}
-        >
+      {projects.length > initialProjectsToShow && (
+        <ShowMoreButton onClick={handleShowMore}>
           {showMore ? "Show Less" : "Show More"}
         </ShowMoreButton>
       )}
