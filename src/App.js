@@ -1,3 +1,5 @@
+// src/App.js;
+
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import GlobalStyle from "./styles/GlobalStyle";
@@ -38,24 +40,12 @@ const RightColumn = styled.div`
   }
 `;
 
-const MobileMessage = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: ${theme.colors.darkNavy};
-  color: ${theme.colors.lightestSlate};
-  font-size: 18px;
-  text-align: center;
-  padding: 20px;
-`;
-
 function App() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth <= 768);
     };
 
     handleResize(); // Check initial screen width
@@ -66,22 +56,17 @@ function App() {
   return (
     <Router>
       <GlobalStyle />
-      {isMobile ? (
-        <MobileMessage>
-          I am working on the mobile version. Please open in desktop to view
-          this website for now.
-        </MobileMessage>
-      ) : (
-        <AppContainer>
+      <AppContainer>
+        {!isMobile && (
           <LeftColumn>
             <Header />
             <Footer />
           </LeftColumn>
-          <RightColumn>
-            <Home />
-          </RightColumn>
-        </AppContainer>
-      )}
+        )}
+        <RightColumn>
+          <Home />
+        </RightColumn>
+      </AppContainer>
     </Router>
   );
 }

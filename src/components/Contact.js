@@ -92,7 +92,7 @@ const Contact = () => {
           <FaInstagram /> Instagram
         </a>
         <a className="email-link" href={`mailto:${personalInfo.contact.email}`}>
-          <FaEnvelope /> Send an Email
+          <FaEnvelope /> Email
         </a>
       </div>
     </ContactSection>

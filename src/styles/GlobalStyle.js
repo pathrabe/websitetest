@@ -32,6 +32,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     line-height: 1.5;
     overflow-x: hidden;
+
+    @media (max-width: 768px) {
+      font-size: 13px; /* Reduced font size by 1 */
+      margin-left: 0;
+      background: ${theme.colors.darkNavy};
+    }
   }
 
   a {
@@ -51,11 +57,19 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 0 10px 0;
     font-weight: 600;
     line-height: 1.1;
+
+    @media (max-width: 768px) {
+      font-size: 70%; /* Scale down headings slightly on mobile */
+    }
   }
 
   p {
     margin: 0 0 15px 0;
     max-width: 600px;
+
+    @media (max-width: 768px) {
+      font-size: 13px; /* Reduced font size by 1 */
+    }
   }
 
   ul {
@@ -74,6 +88,10 @@ const GlobalStyle = createGlobalStyle`
     &:focus,
     &:active {
       outline: none;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 13px; /* Reduced font size by 1 */
     }
   }
 

@@ -1,3 +1,5 @@
+// src/components/Skills.js
+
 import React from "react";
 import styled from "styled-components";
 import theme from "../styles/theme";
@@ -27,8 +29,11 @@ const SkillsSection = styled.section`
         font-weight: bold;
         flex: 0.2;
         display: flex;
-        text-align: center;
         align-items: center;
+
+        @media (max-width: 768px) {
+          flex: 0.3;
+        }
       }
 
       .skill-items {
@@ -37,6 +42,9 @@ const SkillsSection = styled.section`
         flex: 0.8;
         flex-wrap: wrap;
         gap: 15px;
+        @media (max-width: 768px) {
+          flex: 0.7;
+        }
 
         span {
           background-color: ${theme.colors.lightNavy};
