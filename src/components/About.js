@@ -6,7 +6,7 @@ import { personalInfo } from "../data/data";
 
 const AboutSection = styled.section`
   max-width: 1100px; // Increased by 10%
-  margin: 150px auto 0;
+  margin: 100px auto 0;
   padding: 0 20px;
 
   .content-wrapper {
