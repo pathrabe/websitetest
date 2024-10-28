@@ -52,7 +52,7 @@ const ProjectCard = styled.div`
 
     .project-links {
       a {
-        color: ${theme.colors.lightestSlate};
+        color: ${theme.colors.green};
         margin-left: 15px;
         font-size: 20px;
         transition: ${theme.transition};
