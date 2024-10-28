@@ -12,6 +12,7 @@ import theme from "./styles/theme";
 const AppContainer = styled.div`
   display: flex;
   min-height: 100vh;
+  width: 100vw;
 `;
 
 const LeftColumn = styled.div`

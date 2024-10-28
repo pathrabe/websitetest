@@ -3,7 +3,12 @@ import React from "react";
 import styled from "styled-components";
 import theme from "../styles/theme";
 import { personalInfo, socialLinks } from "../data/data";
-import { FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaInstagram,
+  FaEnvelope,
+  FaFileDownload,
+} from "react-icons/fa";
 
 const ContactSection = styled.section`
   max-width: 1100px;
@@ -72,6 +77,34 @@ const ContactSection = styled.section`
       background-color: ${theme.colors.greenTint};
     }
   }
+
+  .download-resume {
+    display: none;
+
+    &:hover {
+      background-color: ${theme.colors.greenTint};
+    }
+
+    svg {
+      font-size: 20px;
+    }
+
+    @media (max-width: 768px) {
+      display: inline-flex;
+      color: ${theme.colors.green};
+      border: 1px solid ${theme.colors.green};
+      border-radius: ${theme.borderRadius};
+      padding: 1rem 1.75rem;
+      font-size: 16px;
+      font-family: ${theme.fonts.mono};
+      text-decoration: none;
+      cursor: pointer;
+      transition: ${theme.transition};
+      margin-top: 20px;
+      align-items: center;
+      gap: 10px;
+    }
+  }
 `;
 
 const Contact = () => {
@@ -95,6 +128,14 @@ const Contact = () => {
           <FaEnvelope /> Email
         </a>
       </div>
+      <a
+        className="download-resume"
+        href={`${process.env.PUBLIC_URL}/resume.pdf`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaFileDownload /> Download Résumé
+      </a>
     </ContactSection>
   );
 };
