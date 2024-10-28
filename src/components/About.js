@@ -83,8 +83,8 @@ const About = () => {
             alt={personalInfo.name}
           />
         </div>
-        <div className="text-content">
-          <h1>Hi, I'm {personalInfo.name}.</h1>
+        <div className="text-content" tabIndex="0">
+          <h1>Hi 👋, I'm {personalInfo.shortName}.</h1>
           <h2>{personalInfo.description}</h2>
           {personalInfo.about.map((paragraph, idx) => (
             <p key={idx} dangerouslySetInnerHTML={{ __html: paragraph }} />
