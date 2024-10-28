@@ -59,7 +59,8 @@ const ProjectCard = styled.div`
 
         &:hover,
         &:focus {
-          color: ${theme.colors.green};
+          color: ${theme.colors.lightestSlate};
+          box-shadow: 0 15px 40px rgba(0, 255, 255, 1);
         }
       }
     }
