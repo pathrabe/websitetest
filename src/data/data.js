@@ -254,7 +254,7 @@ export const projects = [
   },
   {
     id: 5,
-    title: "Netflix - React",
+    title: "Netflix: React",
     description:
       "A Netflix clone built from scratch using React, Firebase Authentication, and Styled Components. The project demonstrates advanced component usage and state management.",
     techStack: ["React", "Firebase", "Styled Components"],
