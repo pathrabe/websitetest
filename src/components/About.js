@@ -80,7 +80,7 @@ const About = () => {
           <img
             tabIndex="0"
             src={`${process.env.PUBLIC_URL}/profile.png`}
-            alt="Dibyajyoti Pradhan"
+            alt={personalInfo.name}
           />
         </div>
         <div className="text-content">

@@ -8,6 +8,7 @@ const HeaderContainer = styled.header`
   width: 100%;
 
   .logo {
+    margin-top: 50px;
     font-size: 24px;
     color: ${theme.colors.green};
     font-weight: bold;
