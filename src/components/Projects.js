@@ -41,7 +41,6 @@ const ProjectCard = styled(Card)`
     .project-links {
       a {
         color: ${({ theme }) => theme.colors.primary};
-        margin-left: 15px;
         font-size: 20px;
         transition: ${({ theme }) => theme.transition};
 
@@ -56,7 +55,8 @@ const ProjectCard = styled(Card)`
 
   .project-title {
     font-size: 24px;
-    margin: 20px 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
     color: ${({ theme }) => theme.colors.text};
   }
 
