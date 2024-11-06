@@ -17,9 +17,18 @@ export const socialLinks = [
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/dibyajyoti-pradhan-83a649146/",
   },
-  { id: 3, name: "Instagram", url: "https://www.instagram.com/shaky_coder/" },
-  { id: 4, name: "LeetCode", url: "https://leetcode.com/u/dibyojyotipradhan/" },
+  {
+    id: 3,
+    name: "Instagram",
+    url: "https://www.instagram.com/shaky_coder/",
+  },
+  {
+    id: 4,
+    name: "LeetCode",
+    url: "https://leetcode.com/u/dibyojyotipradhan/",
+  },
 ];
+
 export const personalInfo = {
   name: "Dibyajyoti Pradhan",
   shortName: "Dibyajyoti",
@@ -36,9 +45,8 @@ export const personalInfo = {
   contact: {
     heading: "Get In Touch",
     message: `
-                  Whether you have a question or
-                  just want to say hi, feel free to drop a message!
-                `,
+      Whether you have a question or just want to say hi, feel free to drop a message!
+    `,
     email: "dibyojyotipradhan@gmail.com",
   },
 };
@@ -284,8 +292,8 @@ export const achievements = [
     description:
       "Recognized with the Jagadis Bose National Talent Search Scholarship, selected as one of 56 scholars from over 3000 applicants from top-tier colleges.",
   },
-  // Add more achievements if necessary
 ];
+
 export const education = [
   {
     id: 1,
@@ -327,3 +335,11 @@ export const education = [
     ],
   },
 ];
+
+export const contactInfo = {
+  heading: "Get In Touch",
+  message: `
+    Whether you have a question or just want to say hi, feel free to drop a message!
+  `,
+  email: "dibyojyotipradhan@gmail.com",
+};

@@ -1,6 +1,6 @@
-// src/styles/GlobalStyles.js
+// src/styles/GlobalStyle.js
+
 import { createGlobalStyle } from "styled-components";
-import theme from "./theme";
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -22,44 +22,44 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     background: linear-gradient(
       135deg,
-      ${theme.colors.lightNavy} 0%,
-      ${theme.colors.darkNavy} 33.3%,
-      ${theme.colors.lightNavy} 66.6%,
-      ${theme.colors.darkNavy} 100%
+      ${({ theme }) => theme.colors.lightNavy} 0%,
+      ${({ theme }) => theme.colors.darkNavy} 33.3%,
+      ${({ theme }) => theme.colors.lightNavy} 66.6%,
+      ${({ theme }) => theme.colors.darkNavy} 100%
     );
-    color: ${theme.colors.slate};
-    font-family: ${theme.fonts.main};
-    font-size: 16px;
+    color: ${({ theme }) => theme.colors.text};
+    font-family: ${({ theme }) => theme.fonts.main};
+    font-size: ${({ theme }) => theme.fontSizes.base};
     line-height: 1.5;
     overflow-x: hidden;
 
     @media (max-width: 768px) {
-      font-size: 13px; /* Reduced font size by 1 */
+      font-size: ${({ theme }) => theme.fontSizes.sm};
       margin-left: 0;
-      background: ${theme.colors.darkNavy};
+      background: ${({ theme }) => theme.colors.darkNavy};
     }
   }
 
   a {
-    color: ${theme.colors.green};
+    color: ${({ theme }) => theme.colors.primary};
     text-decoration: none;
-    transition: ${theme.transition};
+    transition: ${({ theme }) => theme.transition};
 
     &:hover,
     &:focus {
-      color: ${theme.colors.lightGreen};
+      color: ${({ theme }) => theme.colors.linkHover};
       text-decoration: underline;
     }
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: ${theme.colors.lightestSlate};
+    color: ${({ theme }) => theme.colors.text};
     margin: 0 0 10px 0;
     font-weight: 600;
     line-height: 1.1;
 
     @media (max-width: 768px) {
-      font-size: 70%; /* Scale down headings slightly on mobile */
+      font-size: 70%;
     }
   }
 
@@ -68,7 +68,7 @@ const GlobalStyle = createGlobalStyle`
     max-width: 600px;
 
     @media (max-width: 768px) {
-      font-size: 13px; /* Reduced font size by 1 */
+      font-size: ${({ theme }) => theme.fontSizes.sm};
     }
   }
 
@@ -81,9 +81,9 @@ const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
     border: none;
-    border-radius: ${theme.borderRadius};
-    transition: ${theme.transition};
-    font-family: ${theme.fonts.main};
+    border-radius: ${({ theme }) => theme.borderRadius};
+    transition: ${({ theme }) => theme.transition};
+    font-family: ${({ theme }) => theme.fonts.main};
 
     &:focus,
     &:active {
@@ -91,7 +91,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     @media (max-width: 768px) {
-      font-size: 13px; /* Reduced font size by 1 */
+      font-size: ${({ theme }) => theme.fontSizes.sm};
     }
   }
 
@@ -101,7 +101,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   section {
-    min-height: 300px; /* Adjust as necessary to ensure visibility */
+    min-height: 300px;
+  }
+
+  header {
+    background-color: ${({ theme }) => theme.colors.headerBackground};
   }
 `;
 

@@ -1,11 +1,11 @@
 // src/components/About.js
+
 import React from "react";
 import styled from "styled-components";
-import theme from "../styles/theme";
 import { personalInfo } from "../data/data";
 
 const AboutSection = styled.section`
-  max-width: 1100px; // Increased by 10%
+  max-width: 1100px;
   margin: 100px auto 0;
   padding: 0 20px;
 
@@ -22,7 +22,7 @@ const AboutSection = styled.section`
     .profile-picture {
       flex: 1;
       position: relative;
-      overflow: visible; // Allow glow effect to be visible
+      overflow: visible;
       cursor: pointer;
       outline: none;
 
@@ -30,12 +30,13 @@ const AboutSection = styled.section`
         width: 350px;
         height: 350px;
         object-fit: cover;
-        border-radius: 50%; // Keeps the image a perfect circle
+        border-radius: 50%;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 
         &:hover,
         &:focus {
-          box-shadow: 0 0 30px 10px rgba(100, 255, 218, 0.5);
+          box-shadow: 0 0 50px 15px ${({ theme }) => theme.colors.profileGlow};
           transform: translateY(-5px);
         }
       }
@@ -47,22 +48,24 @@ const AboutSection = styled.section`
       h1 {
         font-size: 48px;
         margin-bottom: 10px;
-        color: ${theme.colors.lightestSlate};
+        color: ${({ theme }) => theme.colors.text};
       }
 
       h2 {
         font-size: 32px;
         margin-bottom: 20px;
-        color: ${theme.colors.slate};
+        color: ${({ theme }) => theme.colors.text};
       }
 
       p {
         font-size: 18px;
-        color: ${theme.colors.slate};
+        color: ${({ theme }) => theme.colors.text};
         margin-bottom: 20px;
+
         a {
-          color: ${theme.colors.green};
+          color: ${({ theme }) => theme.colors.primary};
           text-decoration: none;
+
           &:hover {
             text-decoration: underline;
           }

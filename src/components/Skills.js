@@ -2,7 +2,6 @@
 
 import React from "react";
 import styled from "styled-components";
-import theme from "../styles/theme";
 import { skills } from "../data/data";
 
 const SkillsSection = styled.section`
@@ -13,7 +12,7 @@ const SkillsSection = styled.section`
   h2 {
     font-size: 32px;
     margin-bottom: 50px;
-    color: ${theme.colors.lightestSlate};
+    color: ${({ theme }) => theme.colors.text};
     text-align: center;
   }
 
@@ -25,7 +24,7 @@ const SkillsSection = styled.section`
 
       h3 {
         font-size: 20px;
-        color: ${theme.colors.lightestSlate};
+        color: ${({ theme }) => theme.colors.text};
         font-weight: bold;
         flex: 0.2;
         display: flex;
@@ -42,19 +41,20 @@ const SkillsSection = styled.section`
         flex: 0.8;
         flex-wrap: wrap;
         gap: 15px;
+
         @media (max-width: 768px) {
           flex: 0.7;
         }
 
         span {
-          background-color: ${theme.colors.lightNavy};
-          color: ${theme.colors.lightestSlate};
+          background-color: ${({ theme }) => theme.colors.secondary};
+          color: ${({ theme }) => theme.colors.text};
           padding: 10px 15px;
-          border-radius: ${theme.borderRadius};
+          border-radius: ${({ theme }) => theme.borderRadius};
           font-size: 14px;
-          font-family: ${theme.fonts.mono};
+          font-family: ${({ theme }) => theme.fonts.mono};
           position: relative;
-          transition: ${theme.transition};
+          transition: ${({ theme }) => theme.transition};
           overflow: hidden;
           cursor: pointer;
           outline: none;
@@ -62,7 +62,7 @@ const SkillsSection = styled.section`
 
           &:hover,
           &:focus {
-            box-shadow: 0px 0px 15px 5px ${theme.colors.green};
+            box-shadow: 0px 0px 15px 5px ${({ theme }) => theme.colors.primary};
             transform: scale(1.05);
           }
         }

@@ -1,8 +1,11 @@
+// src/components/Projects.js
+
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import theme from "../styles/theme";
 import { projects } from "../data/data";
 import { FaGithub } from "react-icons/fa";
+import Card from "./common/Card";
+import Button from "./common/Button";
 
 const ProjectsSection = styled.section`
   max-width: 1100px;
@@ -12,7 +15,7 @@ const ProjectsSection = styled.section`
   h2 {
     font-size: 32px;
     margin-bottom: 50px;
-    color: ${theme.colors.lightestSlate};
+    color: ${({ theme }) => theme.colors.text};
     text-align: center;
   }
 `;
@@ -27,23 +30,8 @@ const ProjectsGrid = styled.div`
   }
 `;
 
-const ProjectCard = styled.div`
-  background: rgba(17, 34, 64, 0.6);
-  border-radius: ${theme.borderRadius};
+const ProjectCard = styled(Card)`
   padding: 20px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  outline: none;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 255, 255, 0.2);
-    background: rgba(17, 34, 64, 0.8);
-  }
 
   .project-top {
     display: flex;
@@ -52,15 +40,15 @@ const ProjectCard = styled.div`
 
     .project-links {
       a {
-        color: ${theme.colors.green};
+        color: ${({ theme }) => theme.colors.primary};
         margin-left: 15px;
         font-size: 20px;
-        transition: ${theme.transition};
+        transition: ${({ theme }) => theme.transition};
 
         &:hover,
         &:focus {
-          color: ${theme.colors.lightestSlate};
-          box-shadow: 0 15px 40px rgba(0, 255, 255, 1);
+          color: ${({ theme }) => theme.colors.text};
+          box-shadow: 0 15px 40px ${({ theme }) => theme.colors.greenTint};
         }
       }
     }
@@ -69,11 +57,11 @@ const ProjectCard = styled.div`
   .project-title {
     font-size: 24px;
     margin: 20px 0;
-    color: ${theme.colors.lightestSlate};
+    color: ${({ theme }) => theme.colors.text};
   }
 
   .project-description {
-    color: ${theme.colors.slate};
+    color: ${({ theme }) => theme.colors.text};
     font-size: 16px;
     margin-bottom: 20px;
   }
@@ -84,39 +72,22 @@ const ProjectCard = styled.div`
     gap: 10px;
 
     span {
-      background-color: rgba(2, 12, 27, 0.7);
-      color: ${theme.colors.lightestSlate};
+      background-color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.colors.text};
       padding: 5px 15px;
       border-radius: 20px;
       font-size: 14px;
-      font-family: ${theme.fonts.mono};
+      font-family: ${({ theme }) => theme.fonts.mono};
       transition: background-color 0.3s ease, transform 0.3s ease;
       outline: none;
       tabindex: 0;
 
       &:hover,
       &:focus {
-        background-color: ${theme.colors.greenTint};
+        background-color: ${({ theme }) => theme.colors.greenTint};
         transform: translateY(-3px);
+      }
     }
-  }
-`;
-
-const ShowMoreButton = styled.button`
-  margin: 20px auto;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: ${theme.colors.green};
-  background-color: transparent;
-  border: 1px solid ${theme.colors.green};
-  border-radius: ${theme.borderRadius};
-  cursor: pointer;
-  transition: ${theme.transition};
-  display: block;
-
-  &:hover,
-  &:focus {
-    background-color: ${theme.colors.greenTint};
   }
 `;
 
@@ -127,9 +98,9 @@ const Projects = () => {
   useEffect(() => {
     const updateProjectsToShow = () => {
       if (window.innerWidth < 768) {
-        setInitialProjectsToShow(2); // Show 2 projects on mobile
+        setInitialProjectsToShow(2);
       } else {
-        setInitialProjectsToShow(4); // Show 4 projects on desktop
+        setInitialProjectsToShow(4);
       }
     };
 
@@ -192,9 +163,9 @@ const Projects = () => {
         )}
       </ProjectsGrid>
       {projects.length > initialProjectsToShow && (
-        <ShowMoreButton onClick={handleShowMore}>
+        <Button onClick={handleShowMore}>
           {showMore ? "Show Less" : "Show More"}
-        </ShowMoreButton>
+        </Button>
       )}
     </ProjectsSection>
   );

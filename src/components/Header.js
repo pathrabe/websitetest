@@ -1,16 +1,18 @@
 // src/components/Header.js
+
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import theme from "../styles/theme";
 import { navLinks, personalInfo } from "../data/data";
+import ThemeToggle from "./common/ThemeToggle";
 
 const HeaderContainer = styled.header`
   width: 100%;
+  /* Removed background-color as it's now set in GlobalStyle.js */
 
   .logo {
     margin-top: 50px;
-    font-size: 24px;
-    color: ${theme.colors.green};
+    font-size: ${({ theme }) => theme.fontSizes.xl};
+    color: ${({ theme }) => theme.colors.primary};
     font-weight: bold;
 
     a {
@@ -32,20 +34,20 @@ const HeaderContainer = styled.header`
         margin: 20px 0;
 
         a {
-          color: ${theme.colors.lightestSlate};
-          font-size: 16px;
+          color: ${({ theme }) => theme.colors.text};
+          font-size: ${({ theme }) => theme.fontSizes.base};
           text-decoration: none;
           padding: 5px;
-          transition: ${theme.transition};
+          transition: ${({ theme }) => theme.transition};
           cursor: pointer;
 
           &.active {
-            color: ${theme.colors.green};
+            color: ${({ theme }) => theme.colors.primary};
             font-weight: bold;
           }
 
           &:hover {
-            color: ${theme.colors.green};
+            color: ${({ theme }) => theme.colors.primary};
             text-decoration: underline;
           }
         }
@@ -55,20 +57,29 @@ const HeaderContainer = styled.header`
     .resume-button {
       display: block;
       margin-top: 40px;
-      color: ${theme.colors.green};
-      border: 1px solid ${theme.colors.green};
-      border-radius: ${theme.borderRadius};
+      color: ${({ theme }) => theme.colors.primary};
+      border: 1px solid ${({ theme }) => theme.colors.primary};
+      border-radius: ${({ theme }) => theme.borderRadius};
       padding: 0.75rem 1rem;
-      font-size: 13px;
-      font-family: ${theme.fonts.mono};
+      font-size: ${({ theme }) => theme.fontSizes.sm};
+      font-family: ${({ theme }) => theme.fonts.mono};
       text-decoration: none;
       cursor: pointer;
-      transition: ${theme.transition};
+      transition: ${({ theme }) => theme.transition};
 
       &:hover,
       &:focus {
-        background-color: ${theme.colors.greenTint};
+        background-color: ${({ theme }) => theme.colors.greenTint};
       }
+    }
+  }
+
+  .theme-toggle {
+    margin-top: 40px;
+
+    @media (max-width: 768px) {
+      margin-top: 0px;
+      display: none; /* Hide toggle in mobile view */
     }
   }
 `;
@@ -79,7 +90,7 @@ const Header = () => {
   useEffect(() => {
     const options = {
       root: null,
-      rootMargin: "-100px 0px -100px 0px", // This will add some margin to trigger earlier
+      rootMargin: "-100px 0px -100px 0px",
       threshold: 0.4,
     };
 
@@ -118,7 +129,7 @@ const Header = () => {
                   const element = document.getElementById(url.substring(1));
                   if (element) {
                     const offsetPosition =
-                      element.getBoundingClientRect().top + window.scrollY - 50; // Adjust as needed
+                      element.getBoundingClientRect().top + window.scrollY - 50;
                     window.scrollTo({
                       top: offsetPosition,
                       behavior: "smooth",
@@ -139,6 +150,9 @@ const Header = () => {
         >
           Download Résumé
         </a>
+      </div>
+      <div className="theme-toggle">
+        <ThemeToggle />
       </div>
     </HeaderContainer>
   );

@@ -1,13 +1,14 @@
 // src/components/Contact.js
+
 import React from "react";
 import styled from "styled-components";
-import theme from "../styles/theme";
 import { personalInfo, socialLinks } from "../data/data";
 import {
   FaLinkedin,
   FaInstagram,
   FaEnvelope,
   FaFileDownload,
+  FaCode,
 } from "react-icons/fa";
 
 const ContactSection = styled.section`
@@ -22,11 +23,11 @@ const ContactSection = styled.section`
   h2 {
     font-size: 32px;
     margin-bottom: 20px;
-    color: ${theme.colors.lightestSlate};
+    color: ${({ theme }) => theme.colors.text};
   }
 
   p {
-    color: ${theme.colors.slate};
+    color: ${({ theme }) => theme.colors.text};
     margin-bottom: 40px;
   }
 
@@ -37,22 +38,22 @@ const ContactSection = styled.section`
     margin-bottom: 40px;
 
     a {
-      color: ${theme.colors.green};
+      color: ${({ theme }) => theme.colors.primary};
       background-color: transparent;
-      border: 1px solid ${theme.colors.green};
-      border-radius: ${theme.borderRadius};
+      border: 1px solid ${({ theme }) => theme.colors.primary};
+      border-radius: ${({ theme }) => theme.borderRadius};
       padding: 1rem 1.75rem;
       font-size: 16px;
-      font-family: ${theme.fonts.mono};
+      font-family: ${({ theme }) => theme.fonts.mono};
       text-decoration: none;
       display: flex;
       align-items: center;
       gap: 10px;
       cursor: pointer;
-      transition: ${theme.transition};
+      transition: ${({ theme }) => theme.transition};
 
       &:hover {
-        background-color: ${theme.colors.greenTint};
+        background-color: ${({ theme }) => theme.colors.greenTint};
       }
 
       svg {
@@ -62,27 +63,27 @@ const ContactSection = styled.section`
   }
 
   .email-link {
-    color: ${theme.colors.green};
+    color: ${({ theme }) => theme.colors.primary};
     background-color: transparent;
-    border: 1px solid ${theme.colors.green};
-    border-radius: ${theme.borderRadius};
+    border: 1px solid ${({ theme }) => theme.colors.primary};
+    border-radius: ${({ theme }) => theme.borderRadius};
     padding: 1rem 1.75rem;
     font-size: 16px;
-    font-family: ${theme.fonts.mono};
+    font-family: ${({ theme }) => theme.fonts.mono};
     text-decoration: none;
     cursor: pointer;
-    transition: ${theme.transition};
+    transition: ${({ theme }) => theme.transition};
 
     &:hover {
-      background-color: ${theme.colors.greenTint};
+      background-color: ${({ theme }) => theme.colors.greenTint};
     }
   }
 
-  .download-resume {
+  .social-link-row2 {
     display: none;
 
     &:hover {
-      background-color: ${theme.colors.greenTint};
+      background-color: ${({ theme }) => theme.colors.greenTint};
     }
 
     svg {
@@ -91,15 +92,15 @@ const ContactSection = styled.section`
 
     @media (max-width: 768px) {
       display: inline-flex;
-      color: ${theme.colors.green};
-      border: 1px solid ${theme.colors.green};
-      border-radius: ${theme.borderRadius};
+      color: ${({ theme }) => theme.colors.primary};
+      border: 1px solid ${({ theme }) => theme.colors.primary};
+      border-radius: ${({ theme }) => theme.borderRadius};
       padding: 1rem 1.75rem;
       font-size: 16px;
-      font-family: ${theme.fonts.mono};
+      font-family: ${({ theme }) => theme.fonts.mono};
       text-decoration: none;
       cursor: pointer;
-      transition: ${theme.transition};
+      transition: ${({ theme }) => theme.transition};
       margin-top: 20px;
       align-items: center;
       gap: 10px;
@@ -109,6 +110,7 @@ const ContactSection = styled.section`
 
 const Contact = () => {
   const linkedinUrl = socialLinks.find((link) => link.name === "LinkedIn").url;
+  const leetCodeUrl = socialLinks.find((link) => link.name === "LeetCode").url;
   const instagramUrl = socialLinks.find(
     (link) => link.name === "Instagram"
   ).url;
@@ -118,24 +120,34 @@ const Contact = () => {
       <h2>{personalInfo.contact.heading}</h2>
       <p>{personalInfo.contact.message}</p>
       <div className="contact-links">
-        <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
-          <FaLinkedin /> LinkedIn
-        </a>
-        <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
-          <FaInstagram /> Instagram
+        <a href={leetCodeUrl} target="_blank" rel="noopener noreferrer">
+          <FaCode /> LeetCode
         </a>
         <a className="email-link" href={`mailto:${personalInfo.contact.email}`}>
           <FaEnvelope /> Email
         </a>
+        <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+          <FaInstagram /> Instagram
+        </a>
       </div>
-      <a
-        className="download-resume"
-        href={`${process.env.PUBLIC_URL}/resume.pdf`}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaFileDownload /> Download Résumé
-      </a>
+      <div className="contact-links">
+        <a
+          className="social-link-row2"
+          href={linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedin /> LinkedIn
+        </a>
+        <a
+          className="social-link-row2"
+          href={`${process.env.PUBLIC_URL}/resume.pdf`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaFileDownload /> Download Résumé
+        </a>
+      </div>
     </ContactSection>
   );
 };

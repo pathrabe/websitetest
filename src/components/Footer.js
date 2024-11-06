@@ -1,7 +1,7 @@
 // src/components/Footer.js
+
 import React from "react";
 import styled from "styled-components";
-import theme from "../styles/theme";
 import { personalInfo, socialLinks } from "../data/data";
 import {
   FaGithub,
@@ -22,23 +22,23 @@ const FooterContainer = styled.footer`
     margin-bottom: 20px;
 
     a {
-      color: ${theme.colors.lightestSlate};
+      color: ${({ theme }) => theme.colors.text};
       font-size: 30px;
       transition: transform 0.3s ease, color 0.3s ease;
 
       &:hover {
-        color: ${theme.colors.green};
+        color: ${({ theme }) => theme.colors.primary};
         transform: scale(1.2);
       }
     }
   }
 
   .footer-text {
-    color: ${theme.colors.slate};
+    color: ${({ theme }) => theme.colors.text};
     font-size: 14px;
 
     a {
-      color: ${theme.colors.green};
+      color: ${({ theme }) => theme.colors.primary};
       text-decoration: none;
 
       &:hover {
@@ -50,7 +50,7 @@ const FooterContainer = styled.footer`
   .credits {
     margin-top: 20px;
     font-size: 12px;
-    color: ${theme.colors.lightSlate};
+    color: ${({ theme }) => theme.colors.text};
   }
 `;
 
@@ -102,7 +102,7 @@ const Footer = () => (
     </div>
     <div className="credits">
       <p>
-        © {new Date().getFullYear()} Dibyajyoti Pradhan. All Rights Reserved.
+        © {new Date().getFullYear()} {personalInfo.name}. All Rights Reserved.
       </p>
     </div>
   </FooterContainer>
