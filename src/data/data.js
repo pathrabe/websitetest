@@ -250,7 +250,7 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Command Line Application: Cron Parser",
+    title: "CLI Application: Cron Parser",
     description:
       "Implemented a cron expression parser in Java to expand cron strings into detailed schedules. Parses five fields (minute, hour, day of month, month, day of week) and outputs the schedule in a formatted table.",
     techStack: ["Java", "Maven", "CLI Development", "JUnit"],

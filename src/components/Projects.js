@@ -37,7 +37,13 @@ const ProjectCard = styled(Card)`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    margin-top: 10px;
+    .project-title-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
     .project-links {
       a {
         color: ${({ theme }) => theme.colors.primary};
@@ -54,9 +60,8 @@ const ProjectCard = styled(Card)`
   }
 
   .project-title {
+    margin-left: 20px;
     font-size: 24px;
-    margin-top: 10px;
-    margin-bottom: 20px;
     color: ${({ theme }) => theme.colors.text};
   }
 
@@ -136,20 +141,22 @@ const Projects = () => {
               }}
             >
               <div className="project-top">
-                <div className="project-links">
-                  {url && (
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="GitHub Link"
-                    >
-                      <FaGithub />
-                    </a>
-                  )}
+                <div className="project-title-row">
+                  <div className="project-links">
+                    {url && (
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub Link"
+                      >
+                        <FaGithub />
+                      </a>
+                    )}
+                  </div>
+                  <div className="project-title">{title}</div>
                 </div>
               </div>
-              <div className="project-title">{title}</div>
               <div className="project-description">{description}</div>
               <div className="project-tech">
                 {techStack.map((tech, idx) => (
