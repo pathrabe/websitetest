@@ -225,7 +225,7 @@ export const projects = [
     id: 1,
     title: "Cloud Storage System",
     description:
-      "A Java-based cloud storage system that allows users to manage files and directories, perform file operations, and handle compression and decompression of files. The system supports multiple users with individual storage capacities and enforces file ownership and access permissions.",
+      "A Java-based cloud storage system that allows users to manage files and directories, perform file operations, and handle compression and decompression of files.",
     techStack: [
       "Java",
       "Maven",
