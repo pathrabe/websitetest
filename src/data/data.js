@@ -223,6 +223,23 @@ export const experiences = [
 export const projects = [
   {
     id: 1,
+    title: "Cloud Storage System",
+    description:
+      "A Java-based cloud storage system that allows users to manage files and directories, perform file operations, and handle compression and decompression of files. The system supports multiple users with individual storage capacities and enforces file ownership and access permissions.",
+    techStack: [
+      "Java",
+      "Maven",
+      "JUnit 5",
+      "File Management",
+      "Compression",
+      "Decompression",
+    ],
+    url: "https://github.com/Dibyajyoti-Pradhan/cloud-storage-system",
+    external: "https://github.com/Dibyajyoti-Pradhan/cloud-storage-system",
+    stars: 0,
+  },
+  {
+    id: 2,
     title: "Concurrency In Java: Web Crawler",
     description:
       "Developed a concurrent web crawler in Java to explore and index pages within a specific domain. The crawler processes URLs from a given starting point, printing out each visited URL and its links while restricting itself to the specified domain.",
@@ -232,7 +249,7 @@ export const projects = [
     stars: 0,
   },
   {
-    id: 2,
+    id: 3,
     title: "Command Line Application: Cron Parser",
     description:
       "Implemented a cron expression parser in Java to expand cron strings into detailed schedules. Parses five fields (minute, hour, day of month, month, day of week) and outputs the schedule in a formatted table.",
@@ -242,7 +259,7 @@ export const projects = [
     stars: 0,
   },
   {
-    id: 3,
+    id: 4,
     title: "CSV Parser: Cookie Log",
     description:
       "Developed a command-line application in Java to parse log files and determine the most active cookies for a given date. Processes CSV logs to provide insights into cookie activity.",
@@ -252,7 +269,7 @@ export const projects = [
     stars: 0,
   },
   {
-    id: 4,
+    id: 5,
     title: "Pokemon - Advanced HTML & CSS Project",
     description:
       "An advanced CSS project for Pokemon lovers, showcasing how far UI can be developed without JavaScript. Built using advanced HTML, CSS, SASS, BEM, and 7-1 Architecture.",
@@ -262,7 +279,7 @@ export const projects = [
     stars: 0,
   },
   {
-    id: 5,
+    id: 6,
     title: "Netflix: React",
     description:
       "A Netflix clone built from scratch using React, Firebase Authentication, and Styled Components. The project demonstrates advanced component usage and state management.",
