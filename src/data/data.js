@@ -30,8 +30,8 @@ export const socialLinks = [
 ];
 
 export const personalInfo = {
-  name: "Dibyajyoti Pradhan",
-  shortName: "Dibyajyoti",
+  name: "Ankur Pathrabe",
+  shortName: "Ankur",
   description: "Senior Software Engineer",
   about: [
     `I'm a Senior Software Engineer, based in London, with a background in developing innovative and scalable software solutions. I've worked with leading companies like <a href="https://en.wikipedia.org/wiki/HubSpot" target="_blank" rel="noopener noreferrer">HubSpot</a>, <a href="https://en.wikipedia.org/wiki/Meta_Platforms" target="_blank" rel="noopener noreferrer">Meta</a>, and <a href="https://en.wikipedia.org/wiki/Amazon_(company)" target="_blank" rel="noopener noreferrer">Amazon</a>, building robust systems that improve user experiences and drive business growth. Currently, I’m focusing on products at HubSpot, leading engineering teams and optimizing system performance. My expertise includes full-stack development, system architecture, and mentoring.`,
