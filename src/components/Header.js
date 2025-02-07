@@ -148,7 +148,7 @@ const Header = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Download Résumé
+          Download Brochure
         </a>
       </div>
       <div className="theme-toggle">

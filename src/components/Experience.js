@@ -3,7 +3,55 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { experiences } from "../data/data";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { personalInfo } from "../data/data";
+import { FaMapMarkerAlt, FaRegCalendarAlt } from "react-icons/fa";
+
+// const profileImages = {
+//   1: [
+//    `${process.env.PUBLIC_URL}/profile1.jpeg`,
+//      `${process.env.PUBLIC_URL}/profile2.jpeg`,
+//      `${process.env.PUBLIC_URL}/profile3.jpeg`,
+//   ],
+//   2: [
+//     `${process.env.PUBLIC_URL}/profile1.jpeg`,
+//       `${process.env.PUBLIC_URL}/profile2.jpeg`,
+//       `${process.env.PUBLIC_URL}/profile3.jpeg`,
+//    ],
+//    3: [
+//     `${process.env.PUBLIC_URL}/profile1.jpeg`,
+//       `${process.env.PUBLIC_URL}/profile2.jpeg`,
+//       `${process.env.PUBLIC_URL}/profile3.jpeg`,
+//    ],
+// };
+
+// function ProfileImage() {
+//   const [currentImage, setCurrentImage] = useState(0);
+
+//   const changeImage = () => {
+//     setCurrentImage((prev) => (prev + 1) % profileImages.length);
+//   }
+// };
+
+const profileImages = {
+  1: `${process.env.PUBLIC_URL}/profile1.jpeg`,
+  2: `${process.env.PUBLIC_URL}/profile2.jpeg`,
+  3: `${process.env.PUBLIC_URL}/profile3.jpeg`,
+};
+
+function ProfileImage({ id }) {
+  // State to track the current image index for this specific id
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Get the correct image array, fallback to an empty array if id is missing
+  const images = profileImages[id] || [];
+
+  // Function to change image on click
+  const changeImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+};
+
+console.log(profileImages[1])
 
 const ExperienceSection = styled.section`
   max-width: 1100px;
@@ -71,10 +119,26 @@ const ExperienceItem = styled.div`
   }
 
   .left-column {
-    font-size: 16px;
-    color: ${({ theme }) => theme.colors.slate};
-    text-transform: uppercase;
-    font-weight: bold;
+    flex: 1;
+      position: relative;
+      overflow: visible;
+      cursor: pointer;
+      outline: none;
+
+      img {
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 5%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+        &:hover,
+        &:focus {
+          box-shadow: 0 0 50px 15px ${({ theme }) => theme.colors.profileGlow};
+          transform: translateY(-5px);
+        }
+      }
   }
 
   .right-column {
@@ -112,12 +176,27 @@ const ExperienceItem = styled.div`
       display: flex;
       align-items: center;
       gap: 5px;
-      color: ${({ theme }) => theme.colors.slate};
-      font-size: 16px;
-      margin-bottom: 10px;
+      color: ${({ theme }) => theme.colors.primary};
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 3px;
 
       svg {
         font-size: 18px;
+      }
+    }
+
+    .date {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: ${({ theme }) => theme.colors.text};
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+
+      svg {
+        font-size: 16px;
       }
     }
 
@@ -189,7 +268,7 @@ const Experience = () => {
 
   return (
     <ExperienceSection id="experience">
-      <h2>Work Experience</h2>
+      <h2>The Journey 💪🏻</h2>
       <ExperienceList>
         {experiencesToShow.map(
           ({
@@ -203,9 +282,16 @@ const Experience = () => {
             techStack,
           }) => (
             <ExperienceItem key={id} tabIndex="0">
-              <div className="left-column">{date}</div>
+              <div className="left-column">
+                <img
+                            tabIndex="0"
+                            src={profileImages[id]}
+                            alt={personalInfo.name}
+                            // src={`${process.env.PUBLIC_URL}/profile.jpg`}
+                          />
+              </div>
               <div className="right-column">
-                <div className="title-company">
+                {/* <div className="title-company">
                   <div
                     className="company"
                     onClick={(e) => {
@@ -226,24 +312,28 @@ const Experience = () => {
                       {company}
                     </a>
                   </div>
-                  <div className="job-title">{position}</div>
-                </div>
+                  <div className="job-title">{position}</div> */}
+                {/* </div> */}
                 <div className="location">
                   <FaMapMarkerAlt />
                   <span>{location}</span>
+                </div>
+                <div className="date">
+                  <FaRegCalendarAlt />
+                  <span>{date}</span>
                 </div>
                 <div className="responsibilities">
                   {responsibilities.map((item, idx) => (
                     <p key={idx}>{item}</p>
                   ))}
                 </div>
-                <div className="tech-stack">
+                {/* <div className="tech-stack">
                   {techStack.map((tech, idx) => (
                     <span key={idx} tabIndex="0">
                       {tech}
                     </span>
                   ))}
-                </div>
+                </div> */}
               </div>
             </ExperienceItem>
           )

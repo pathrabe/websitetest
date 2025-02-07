@@ -8,7 +8,7 @@ import {
   FaInstagram,
   FaEnvelope,
   FaFileDownload,
-  FaCode,
+  FaTiktok,
 } from "react-icons/fa";
 
 const ContactSection = styled.section`
@@ -110,7 +110,7 @@ const ContactSection = styled.section`
 
 const Contact = () => {
   const linkedinUrl = socialLinks.find((link) => link.name === "LinkedIn").url;
-  const leetCodeUrl = socialLinks.find((link) => link.name === "LeetCode").url;
+  const leetCodeUrl = socialLinks.find((link) => link.name === "TikTok").url;
   const instagramUrl = socialLinks.find(
     (link) => link.name === "Instagram"
   ).url;
@@ -120,17 +120,18 @@ const Contact = () => {
       <h2>{personalInfo.contact.heading}</h2>
       <p>{personalInfo.contact.message}</p>
       <div className="contact-links">
+        <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+          <FaInstagram /> Instagram
+        </a>
         <a href={leetCodeUrl} target="_blank" rel="noopener noreferrer">
-          <FaCode /> LeetCode
+          <FaTiktok /> TikTok
         </a>
         <a className="email-link" href={`mailto:${personalInfo.contact.email}`}>
           <FaEnvelope /> Email
         </a>
-        <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
-          <FaInstagram /> Instagram
-        </a>
+
       </div>
-      <div className="contact-links">
+      {/* <div className="contact-links">
         <a
           className="social-link-row2"
           href={linkedinUrl}
@@ -147,7 +148,7 @@ const Contact = () => {
         >
           <FaFileDownload /> Download Résumé
         </a>
-      </div>
+      </div> */}
     </ContactSection>
   );
 };

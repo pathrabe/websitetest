@@ -10,6 +10,7 @@ import Achievements from "../components/Achievements";
 import Education from "../components/Education";
 import Contact from "../components/Contact";
 import ThemeToggle from "../components/common/ThemeToggle";
+import TransformationList from "../components/Transformation";
 
 const MainContainer = styled.main`
   padding: 100px 20px;
@@ -32,11 +33,12 @@ const Home = () => (
       <ThemeToggle />
     </div>
     <About />
-    <Skills />
     <Experience />
     <Projects />
-    <Achievements />
-    <Education />
+    <Skills />
+    {/* <TransformationList /> */}
+    {/* <Achievements /> */}
+    {/* <Education /> */}
     <Contact />
   </MainContainer>
 );

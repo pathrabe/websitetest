@@ -74,7 +74,7 @@ const SkillsSection = styled.section`
 const Skills = () => {
   return (
     <SkillsSection id="skills">
-      <h2>Skills</h2>
+      <h2>Learnings 💡</h2>
       <div className="skills">
         {skills.map((skillGroup, idx) => (
           <div className="skill-category" key={idx}>

@@ -8,7 +8,8 @@ import {
   FaLinkedin,
   FaTwitter,
   FaInstagram,
-  FaCode,
+  FaEnvelope,
+  FaTiktok,
 } from "react-icons/fa";
 
 const FooterContainer = styled.footer`
@@ -63,17 +64,17 @@ const Footer = () => (
           case "GitHub":
             Icon = FaGithub;
             break;
+          case "Email":
+            Icon = FaEnvelope;
+            break;
           case "LinkedIn":
             Icon = FaLinkedin;
-            break;
-          case "Twitter":
-            Icon = FaTwitter;
             break;
           case "Instagram":
             Icon = FaInstagram;
             break;
           default:
-            Icon = FaCode;
+            Icon = FaTiktok;
         }
         return (
           <a
@@ -92,7 +93,7 @@ const Footer = () => (
       <p>
         Designed & Built by{" "}
         <a
-          href="https://www.linkedin.com/in/dibyajyoti-pradhan-83a649146/"
+          href="https://www.instagram.com/ankur_pathrabe?igsh=eXVqNnVnaWtrcGhz&utm_source=qr"
           target="_blank"
           rel="noopener noreferrer"
         >

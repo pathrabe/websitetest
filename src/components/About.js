@@ -82,7 +82,7 @@ const About = () => {
         <div className="profile-picture">
           <img
             tabIndex="0"
-            src={`${process.env.PUBLIC_URL}/profile.png`}
+            src={`${process.env.PUBLIC_URL}/profile.jpg`}
             alt={personalInfo.name}
           />
         </div>
