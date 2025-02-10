@@ -1,12 +1,13 @@
 // src/data/data.js
 
 export const navLinks = [
-  { id: 1, name: "About", url: "#about" },
-  { id: 2, name: "Skills", url: "#skills" },
-  { id: 3, name: "Experience", url: "#experience" },
-  { id: 4, name: "Projects", url: "#projects" },
-  { id: 5, name: "Achievements", url: "#achievements" },
-  { id: 6, name: "Education", url: "#education" },
+  { id: 1, name: "About Me", url: "#about" },
+  { id: 2, name: "The Journey", url: "#experience" },
+  { id: 3, name: "Transformation", url: "#transform" },
+  { id: 4, name: "Learnings", url: "#skills" },
+  // { id: 4, name: "Projects", url: "#projects" },
+  // { id: 5, name: "Achievements", url: "#achievements" },
+  // { id: 6, name: "Education", url: "#education" },
   { id: 7, name: "Contact", url: "#contact" },
 ];
 
@@ -39,9 +40,9 @@ export const personalInfo = {
   shortName: "Ankur",
   description: "Bodybuilder and Analyst",
   about: [
-    "Achieving the pull potential and observing the beauty of the human mind and body. I have fixated my vision on the goal.",
+    "Achieving the full natural potential and observing the beauty of the human mind and body. I have fixated my vision on the goal.",
     "I am a full-time coorperate Analyst working 9-5 who loves to travel. Despite the challenges I've pushed past every obstacle through sheer resilience and dedication, proving that consistency and hard work can overcome any limitation. Fitness is a continuous journey of growth, and I am always learning and evolving.",
-    "My mission is to inspire others to rise above excuses, step beyond their comfort zones, and strive for something greater. Extraordinary results come from extraordinary effort—and it all starts with a single step. Let's emark on this journey together.💯",
+    "My mission is to inspire others to rise above excuses, step beyond their comfort zones, and strive for something greater. Extraordinary results come from extraordinary effort—and it all starts with a single step. Let's embark on this journey together and create a community of like-minded achievers.💯",
     ],
   currentCompany: {
     name: "London",
@@ -263,6 +264,21 @@ export const experiences = [
 export const projects = [
   {
     id: 1,
+    title: "Progressive Growth 💪🏻",
+    description:
+      "Capturing my growth since last 2 years.",
+    techStack: [
+       `${process.env.PUBLIC_URL}/back1.jpeg`,
+      `${process.env.PUBLIC_URL}/back2.jpeg`,
+      `${process.env.PUBLIC_URL}/front1.jpeg`,
+      `${process.env.PUBLIC_URL}/front2.jpeg`,
+    ],
+    url: "https://www.instagram.com/ankur_pathrabe?igsh=eXVqNnVnaWtrcGhz&utm_source=qr",
+    external: "https://www.instagram.com/ankur_pathrabe?igsh=eXVqNnVnaWtrcGhz&utm_source=qr",
+    stars: 0,
+  },
+  {
+    id: 2,
     title: "Flexing Worldwide 🌎",
     description:
       "Build a body that speaks for itself.",
@@ -276,20 +292,40 @@ export const projects = [
     external: "https://www.instagram.com/ankur_pathrabe?igsh=eXVqNnVnaWtrcGhz&utm_source=qr",
     stars: 0,
   },
+];
+
+// const images = {
+//   "Img1": `${process.env.PUBLIC_URL}/flex3.jpeg`,
+//   "Img2": `${process.env.PUBLIC_URL}/flex4.jpeg`,
+//   "Img3": `${process.env.PUBLIC_URL}/flex2.jpeg`,
+// };
+
+export const transform = [
   {
-    id: 2,
-    title: "Transformation",
+    id: 1,
+    title: "Progressive Growth 💪🏻",
     description:
       "Capturing my growth since last 2 years.",
-    techStack: [
-       `${process.env.PUBLIC_URL}/back1.jpeg`,
-      `${process.env.PUBLIC_URL}/back2.jpeg`,
+    transformImages: [
       `${process.env.PUBLIC_URL}/front1.jpeg`,
       `${process.env.PUBLIC_URL}/front2.jpeg`,
+      `${process.env.PUBLIC_URL}/back1.jpeg`,
+      `${process.env.PUBLIC_URL}/back2.jpeg`,
     ],
     url: "https://www.instagram.com/ankur_pathrabe?igsh=eXVqNnVnaWtrcGhz&utm_source=qr",
-    external: "https://www.instagram.com/ankur_pathrabe?igsh=eXVqNnVnaWtrcGhz&utm_source=qr",
-    stars: 0,
+  },
+  {
+    id: 2,
+    title: "Flexing Worldwide 🌎",
+    description:
+      "Build a body that speaks for itself.",
+    transformImages: [
+      `${process.env.PUBLIC_URL}/flex3.jpeg`,
+     `${process.env.PUBLIC_URL}/flex4.jpeg`,
+     `${process.env.PUBLIC_URL}/profile3.jpeg`,
+     `${process.env.PUBLIC_URL}/flex2.jpeg`,
+    ],
+    url: "https://www.instagram.com/ankur_pathrabe?igsh=eXVqNnVnaWtrcGhz&utm_source=qr",
   },
 ];
 

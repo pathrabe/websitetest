@@ -7,6 +7,9 @@ import { FaInstagram } from "react-icons/fa";
 import Card from "./common/Card";
 import Button from "./common/Button";
 import { personalInfo } from "../data/data";
+import Carousel from "react-bootstrap/Carousel";
+import ExampleCarouselImage from "./ExampleCarouselImage";
+import { transform } from "../data/data";
 
 const ProjectsSection = styled.section`
   max-width: 1100px;
@@ -48,7 +51,7 @@ const ProjectCard = styled(Card)`
     .project-links {
       a {
         color: ${({ theme }) => theme.colors.primary};
-        font-size: 20px;
+        font-size: 23px;
         transition: ${({ theme }) => theme.transition};
 
         &:hover,
@@ -62,7 +65,7 @@ const ProjectCard = styled(Card)`
 
   .project-title {
     margin-left: 15px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     font-size: 20px;
     color: ${({ theme }) => theme.colors.text};
   }
@@ -81,12 +84,12 @@ const ProjectCard = styled(Card)`
       outline: none;
 
       img {
-        width: 230px;
-        height: 250px;
+        width: 350px;
+        height: 400px;
+        display: block;
         object-fit: cover;
-        border-radius: 5%;
-        margin-left: 5px;
-        margin-bottom: 5px;
+        border-radius: 10px;
+        margin-left: 65px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 
@@ -98,7 +101,7 @@ const ProjectCard = styled(Card)`
       }
 `;
 
-const Projects = () => {
+const Transform = () => {
   const [showMore, setShowMore] = useState(false);
   const [initialProjectsToShow, setInitialProjectsToShow] = useState(4);
 
@@ -117,8 +120,8 @@ const Projects = () => {
   }, []);
 
   const projectsToShow = showMore
-    ? projects
-    : projects.slice(0, initialProjectsToShow);
+    ? transform
+    : transform.slice(0, initialProjectsToShow);
 
   const handleShowMore = () => {
     setShowMore(!showMore);
@@ -129,66 +132,50 @@ const Projects = () => {
       <h2>Transformation 🗝️</h2>
       <ProjectsGrid>
         {projectsToShow.map(
-          ({ id, title, description, techStack, url, external }) => (
-            <ProjectCard
-              key={id}
-              tabIndex="0"
-              onClick={() => {
-                window.open(external || url, "_blank", "noopener,noreferrer");
-              }}
-              onKeyPress={(e) => {
-                if (e.key === "Enter") {
-                  window.open(external || url, "_blank", "noopener,noreferrer");
-                }
-              }}
-            >
+          ({ id, transformImages, title, description, techStack, url, external }) => (
+            <ProjectCard>
               <div className="project-top">
                 <div className="project-title-row">
-                  <div className="project-links">
-                    {url && (
-                      <a
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="GitHub Link"
-                      >
-                        <FaInstagram />
-                      </a>
-                    )}
-                  </div>
-                  <div className="project-title">
-                  {url && (
-                      <a
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="GitHub Link"
-                      >
-                        {title}
-                      </a>
-                    )}
-                    </div>
+                    <div className="project-links">
+                                        {url && (
+                                          <a
+                                            href={url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label="Instagram Link"
+                                          >
+                                            <FaInstagram />
+                                          </a>
+                                        )}
+                                      </div>
+                                      <div className="project-title">
+                                      {url && (
+                                          <a
+                                            href={url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label="Instagram Link"
+                                          >
+                                            {title}
+                                          </a>
+                                        )}
+                                        </div>
                 </div>
               </div>
               <div className="project-description">{description}</div>
               <div className="project-tech">
-                {techStack.map((tech, idx) => (
-                    <span key={idx} tabIndex="0">
-                      <img
-                            tabIndex="0"
-                            src={tech}
-                            alt={personalInfo.name}
-                            // src={`${process.env.PUBLIC_URL}/profile.jpg`}
-                          />
-                    </span>
-                  ))}
-
-                  {/* <img
-                            tabIndex="0"
-                            src={techStack[id]}
-                            alt={personalInfo.name}
-                            // src={`${process.env.PUBLIC_URL}/profile.jpg`}
-                          /> */}
+              <Carousel>
+                {transformImages.map((image, idx) => (
+                    <Carousel.Item key={idx} tabIndex="0">
+                    <img
+                        tabIndex="0"
+                        src={image}
+                        alt={`Transformation ${idx + 1}`}
+                        // style={{ width: "100%", height: "auto", borderRadius: "10px" }}
+                    />
+                    </Carousel.Item>
+                ))}
+                </Carousel>
               </div>
             </ProjectCard>
           )
@@ -203,4 +190,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Transform;

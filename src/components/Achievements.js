@@ -6,6 +6,9 @@ import { achievements } from "../data/data";
 import { Slideshow } from "../data/data";
 import Card from "./common/Card";
 import Button from "./common/Button";
+// import React from "react";
+import Carousel from "react-bootstrap/Carousel";
+import ExampleCarouselImage from "./ExampleCarouselImage";
 
 const AchievementsSection = styled.section`
   max-width: 1100px;
@@ -40,6 +43,32 @@ const AchievementItem = styled(Card)`
     font-size: 16px;
     line-height: 1.6;
   }
+`;
+
+const TransformCard = styled(Card)`
+  .project-tech {
+    flex: 1;
+      position: relative;
+      overflow: visible;
+      cursor: pointer;
+      outline: none;
+
+      img {
+        width: 230px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 5%;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+        &:hover,
+        &:focus {
+          box-shadow: 0 0 50px 15px ${({ theme }) => theme.colors.profileGlow};
+          transform: translateY(-5px);
+        }
+      }
 `;
 
 // const images = [

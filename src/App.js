@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import styled from "styled-components";
 import { ThemeProvider } from "./context/ThemeContext";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const AppContainer = styled.div`
   display: flex;

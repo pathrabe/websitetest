@@ -10,7 +10,8 @@ import Achievements from "../components/Achievements";
 import Education from "../components/Education";
 import Contact from "../components/Contact";
 import ThemeToggle from "../components/common/ThemeToggle";
-import TransformationList from "../components/Transformation";
+import UncontrolledExample from "../components/Transformation";
+import Transform from "../components/Transform";
 
 const MainContainer = styled.main`
   padding: 100px 20px;
@@ -34,9 +35,10 @@ const Home = () => (
     </div>
     <About />
     <Experience />
-    <Projects />
+    {/* <Projects /> */}
+    <Transform />
     <Skills />
-    {/* <TransformationList /> */}
+    {/* <UncontrolledExample/> */}
     {/* <Achievements /> */}
     {/* <Education /> */}
     <Contact />

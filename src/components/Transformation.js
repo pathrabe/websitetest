@@ -1,61 +1,35 @@
-// import { useState, useEffect } from "react";
+import React from "react";
+import Carousel from "react-bootstrap/Carousel";
+import ExampleCarouselImage from "./ExampleCarouselImage";
 
-// export const TransformationList = ({ transformations = [] }) => {
-//   // Ensure `transformations` is always an array
-//   if (!Array.isArray(transformations)) {
-//     console.error("Expected transformations to be an array, but got:", transformations);
-//     return null; // Return nothing if invalid data
-//   }
+function UncontrolledExample() {
+  return (
+    <Carousel controls indicators interval={2000} pause="hover"> {/* Enables auto-sliding */}
+      <Carousel.Item>
+        <ExampleCarouselImage text="First slide" />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
 
-//   // Image array for slideshow
-//   const images = [
-//     `${process.env.PUBLIC_URL}/profile1.jpeg`,
-//     `${process.env.PUBLIC_URL}/profile2.jpeg`,
-//     `${process.env.PUBLIC_URL}/profile3.jpeg`,
-//     `${process.env.PUBLIC_URL}/profile.jpg`,
-//   ];
+      <Carousel.Item>
+        <ExampleCarouselImage text="Second slide" />
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
 
-//   // Slideshow state
-//   const [currentIndex, setCurrentIndex] = useState(0);
+      <Carousel.Item>
+        <ExampleCarouselImage text="Third slide" />
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+  );
+}
 
-//   // Next slide function
-//   const nextSlide = () => {
-//     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-//   };
-
-//   // Previous slide function
-//   const prevSlide = () => {
-//     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-//   };
-
-//   // Auto-slide every 3 seconds
-//   useEffect(() => {
-//     const interval = setInterval(nextSlide, 3000);
-//     return () => clearInterval(interval); // Cleanup on unmount
-//   }, []);
-
-//   return (
-//     <div>
-//       {transformations.length > 0 ? (
-//         transformations.map(({ id, title, description }) => (
-//           <div key={id} className="transformation-item">
-//             {/* Slideshow */}
-//             <div className="slideshow-container">
-//               <button className="prev" onClick={prevSlide}>❮</button>
-//               <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="slide-image" />
-//               <button className="next" onClick={nextSlide}>❯</button>
-//             </div>
-
-//             {/* Transformation Details */}
-//             <div className="transformation-title">{title}</div>
-//             <div className="transformation-description">{description}</div>
-//           </div>
-//         ))
-//       ) : (
-//         <p>No transformations available.</p>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default TransformationList;
+export default UncontrolledExample;
