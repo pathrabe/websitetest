@@ -9,27 +9,27 @@ export const navLinks = [
   // { id: 5, name: "Achievements", url: "#achievements" },
   // { id: 6, name: "Education", url: "#education" },
   { id: 7, name: "Contact", url: "#contact" },
+  { id: 8, name: "Story", url: "#media" },
 ];
 
 export const socialLinks = [
-  { id: 1, name: "GitHub", url: "https://github.com/pathrabe" },
   {
-    id: 2,
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/apathrabe/",
-  },
-  {
-    id: 3,
+    id: 1,
     name: "Instagram",
     url: "https://www.instagram.com/ankur_pathrabe?igsh=eXVqNnVnaWtrcGhz&utm_source=qr",
   },
   {
-    id: 4,
+    id: 2,
     name: "TikTok",
     url: "https://www.tiktok.com/@pathrabe4?_t=ZG-8thOAgyECYa&_r=1",
   },
+  { 
+    id: 3, 
+    name: "Youtube", 
+    url: "https://youtube.com/@ankurpathrabe?si=6z_t_ujIWwfASw58" 
+  },
   {
-    id: 5,
+    id: 4,
     name: "Email",
     url: 'mailto:pathrabeankur@gmail.com',
   },
@@ -40,8 +40,8 @@ export const personalInfo = {
   shortName: "Ankur",
   description: "Bodybuilder and Analyst",
   about: [
-    "Achieving the full natural potential and observing the beauty of the human mind and body. I have fixated my vision on the goal.",
-    "I am a full-time coorperate Analyst working 9-5 who loves to travel. Despite the challenges I've pushed past every obstacle through sheer resilience and dedication, proving that consistency and hard work can overcome any limitation. Fitness is a continuous journey of growth, and I am always learning and evolving.",
+    "Achieving the full natural potential to observe the beauty of the human mind and body. I have fixated my vision on the goal.",
+    "Balancing fitness while enjoying my hobbies isn't easy, but I've embraced the challenge, working as a full-time corporate analyst, 9-5. Through sheer resilience and dedication, I've pushed past every obstacle, proving that consistency and hard work can overcome any limitation. Fitness is a lifelong journey of growth, and I am constantly learning and evolving throughout my 10+ years of experience.",
     "My mission is to inspire others to rise above excuses, step beyond their comfort zones, and strive for something greater. Extraordinary results come from extraordinary effort—and it all starts with a single step. Let's embark on this journey together and create a community of like-minded achievers.💯",
     ],
   currentCompany: {
@@ -128,139 +128,6 @@ export const experiences = [
 
 ];
 
-// export const experiences = [
-//   {
-//     id: 1,
-//     position: "Senior Software Engineer",
-//     company: "HubSpot",
-//     location: "London",
-//     url: "https://en.wikipedia.org/wiki/HubSpot",
-//     date: "07/2024 - Present",
-//     responsibilities: [
-//       "Spearheaded the design and implementation of Account Insights, enabling real-time recommendations, optimizing return on investment, and increasing user retention by 10%.",
-//       "Led a team of 4 engineers and provided mentorship to junior developers, driving team development and ensuring successful project delivery.",
-//     ],
-//     techStack: [
-//       "Java",
-//       "JavaScript",
-//       "TypeScript",
-//       "SQL",
-//       "React",
-//       "Google Guice",
-//       "HTML",
-//       "CSS",
-//       "GraphQL",
-//       "Kafka",
-//       "AWS",
-//       "Kubernetes",
-//       "Vitess DB",
-//       "MySQL",
-//       "HBase",
-//       "Backend",
-//       "Frontend",
-//     ],
-//   },
-//   {
-//     id: 2,
-//     position: "Software Engineer II",
-//     company: "Meta",
-//     location: "London",
-//     url: "https://en.wikipedia.org/wiki/Meta_Platforms",
-//     date: "04/2022 - 05/2024",
-//     responsibilities: [
-//       "Led development of mid-flight recommendation flows, like Placements and Campaign Budget, within the Ads Manager App (AMA), resulting in a notable 0.04% increase in Meta’s top-line revenue weighted adoptions and over 12,000 weekly resolutions.",
-//       "Achieved a 20% improvement in screen load times for 8 highly trafficked interfaces in AMA through efficient pre-fetching of relay queries, enhancing user experience.",
-//       "Revamped the duplication flow in AMA to align with ODAX objectives, resulting in a significant 14% increase in revenue and an 18% growth in ad duplications.",
-//       "Collaborated on implementing measurable enhancements, leading to improved performance metrics and increased user engagement within AMA.",
-//     ],
-//     techStack: [
-//       "JavaScript",
-//       "TypeScript",
-//       "Hack",
-//       "SQL",
-//       "React Native",
-//       "GraphQL (Relay)",
-//       "A/B Testing (Experimentation)",
-//       "TAO",
-//       "Scuba",
-//       "Presto",
-//       "Frontend",
-//     ],
-//   },
-//   {
-//     id: 3,
-//     position: "Software Development Engineer II",
-//     company: "Amazon",
-//     location: "Hyderabad",
-//     url: "https://en.wikipedia.org/wiki/Amazon_(company)",
-//     date: "10/2021 - 02/2022",
-//     responsibilities: [
-//       "Expanded user base of Amazon Pay for Business app by 5 million downloads and achieved a 4.3-star rating from launch. Improved app performance metrics by optimizing latency, enhancing user experience, and resolving operational inefficiencies.",
-//       "Engineered an innovative ‘Offline Architecture’ for the app, eliminating perceived latency and improving user experience.",
-//       "Streamlined crawler latency in Daily MIS Settlement Report, reducing processing time from 3 hours to 10 minutes, resolving delays for 70+ online and organized merchants.",
-//     ],
-//     techStack: [
-//       "Java",
-//       "JavaScript",
-//       "Python",
-//       "MySQL",
-//       "AWS",
-//       "React Native",
-//       "Spring MVC",
-//       "DynamoDB",
-//       "Frontend",
-//       "Backend",
-//     ],
-//   },
-//   {
-//     id: 4,
-//     position: "Software Development Engineer I",
-//     company: "Amazon",
-//     location: "Hyderabad",
-//     url: "https://en.wikipedia.org/wiki/Amazon_(company)",
-//     date: "07/2019 - 09/2021",
-//     responsibilities: [
-//       "Orchestrated the development of 18 major pages for the Amazon Pay for Business app.",
-//       "Played a pivotal role in a team of three, facilitating 5 million merchant engagements at launch.",
-//       "Provided mentorship to an SDE for promotion and an intern for a pre-placement offer, recognized with a promotion to Software Development Engineer-2.",
-//     ],
-//     techStack: [
-//       "Java",
-//       "JavaScript",
-//       "AWS",
-//       "React Native",
-//       "Spring MVC",
-//       "DynamoDB",
-//       "React",
-//       "Full Stack",
-//       "RESTful APIs",
-//     ],
-//   },
-//   {
-//     id: 5,
-//     position: "Software Development Engineer Intern",
-//     company: "Amazon",
-//     location: "Hyderabad",
-//     url: "https://en.wikipedia.org/wiki/Amazon_(company)",
-//     date: "05/2018 - 07/2018",
-//     responsibilities: [
-//       "Developed automation for sequence generation in a tier-1 service, benefiting over 100 developer teams in Amazon.",
-//       "Created a comprehensive full-stack admin tool to monitor and manage sequence configurations in real-time.",
-//       "Successfully transitioned from internship to a full-time position, demonstrating strong performance and commitment to excellence.",
-//     ],
-//     techStack: [
-//       "Java",
-//       "AWS",
-//       "Spring MVC",
-//       "DynamoDB",
-//       "Backend",
-//       "RESTful APIs",
-//       "Micro-service Architecture",
-//     ],
-//   },
-// ];
-
-
 export const projects = [
   {
     id: 1,
@@ -294,12 +161,6 @@ export const projects = [
   },
 ];
 
-// const images = {
-//   "Img1": `${process.env.PUBLIC_URL}/flex3.jpeg`,
-//   "Img2": `${process.env.PUBLIC_URL}/flex4.jpeg`,
-//   "Img3": `${process.env.PUBLIC_URL}/flex2.jpeg`,
-// };
-
 export const transform = [
   {
     id: 1,
@@ -329,87 +190,34 @@ export const transform = [
   },
 ];
 
-// export const projects = [
-//   {
-//     id: 1,
-//     title: "Cloud Storage System",
-//     description:
-//       "A Java-based cloud storage system that allows users to manage files and directories, perform file operations, and handle compression and decompression of files.",
-//     techStack: [
-//       "Java",
-//       "Maven",
-//       "JUnit 5",
-//       "File Management",
-//       "Compression",
-//       "Decompression",
-//     ],
-//     url: "https://github.com/Dibyajyoti-Pradhan/cloud-storage-system",
-//     external: "https://github.com/Dibyajyoti-Pradhan/cloud-storage-system",
-//     stars: 0,
-//   },
-//   {
-//     id: 2,
-//     title: "Concurrency In Java: Web Crawler",
-//     description:
-//       "Developed a concurrent web crawler in Java to explore and index pages within a specific domain. The crawler processes URLs from a given starting point, printing out each visited URL and its links while restricting itself to the specified domain.",
-//     techStack: ["Java", "Concurrency", "Maven", "JUnit", "Lombok"],
-//     url: "https://github.com/Dibyajyoti-Pradhan/Crawler",
-//     external: "https://github.com/Dibyajyoti-Pradhan/Crawler",
-//     stars: 0,
-//   },
-//   {
-//     id: 3,
-//     title: "CLI Application: Cron Parser",
-//     description:
-//       "Implemented a cron expression parser in Java to expand cron strings into detailed schedules. Parses five fields (minute, hour, day of month, month, day of week) and outputs the schedule in a formatted table.",
-//     techStack: ["Java", "Maven", "CLI Development", "JUnit"],
-//     url: "https://github.com/Dibyajyoti-Pradhan/CronParser",
-//     external: "https://github.com/Dibyajyoti-Pradhan/CronParser",
-//     stars: 0,
-//   },
-//   {
-//     id: 4,
-//     title: "CSV Parser: Cookie Log",
-//     description:
-//       "Developed a command-line application in Java to parse log files and determine the most active cookies for a given date. Processes CSV logs to provide insights into cookie activity.",
-//     techStack: ["Java", "Maven", "JUnit", "Lombok", "Hashing"],
-//     url: "https://github.com/Dibyajyoti-Pradhan/Cookie",
-//     external: "https://github.com/Dibyajyoti-Pradhan/Cookie",
-//     stars: 0,
-//   },
-//   {
-//     id: 5,
-//     title: "Pokemon - Advanced HTML & CSS Project",
-//     description:
-//       "An advanced CSS project for Pokemon lovers, showcasing how far UI can be developed without JavaScript. Built using advanced HTML, CSS, SASS, BEM, and 7-1 Architecture.",
-//     techStack: ["HTML", "CSS", "SASS", "BEM", "7-1 Architecture"],
-//     url: "https://github.com/Dibyajyoti-Pradhan/Iris",
-//     external: "https://github.com/Dibyajyoti-Pradhan/Iris",
-//     stars: 0,
-//   },
-//   {
-//     id: 6,
-//     title: "Netflix: React",
-//     description:
-//       "A Netflix clone built from scratch using React, Firebase Authentication, and Styled Components. The project demonstrates advanced component usage and state management.",
-//     techStack: ["React", "Firebase", "Styled Components"],
-//     url: "https://github.com/Dibyajyoti-Pradhan/Netflix",
-//     external: "https://github.com/Dibyajyoti-Pradhan/Netflix",
-//     stars: 0,
-//   },
-// ];
-
-export const ach = [
+export const media = [
   {
     id: 1,
-
-  }
+    title: "Indian Genetics 🧬",
+    description:
+      "The 2-year transformation breaking the stereotypes !",
+    // transformImages: [
+    //   `${process.env.PUBLIC_URL}/front1.jpeg`,
+    //   `${process.env.PUBLIC_URL}/front2.jpeg`,
+    //   `${process.env.PUBLIC_URL}/back1.jpeg`,
+    //   `${process.env.PUBLIC_URL}/back2.jpeg`,
+    // ],
+    url: "https://www.youtube.com/embed/bA5JQYdCzcU",
+  },
+  {
+    id: 2,
+    title: "The Demon Back 🦍",
+    description:
+      "Average to unstoppable - all the way up !",
+    // transformImages: [
+    //   `${process.env.PUBLIC_URL}/front1.jpeg`,
+    //   `${process.env.PUBLIC_URL}/front2.jpeg`,
+    //   `${process.env.PUBLIC_URL}/back1.jpeg`,
+    //   `${process.env.PUBLIC_URL}/back2.jpeg`,
+    // ],
+    url: "https://www.youtube.com/embed/bA5JQYdCzcU",
+  },
 ];
-
-export const Slideshow = () => {
-
-
-};
 
 export const achievements = [
   {
@@ -435,42 +243,13 @@ export const achievements = [
 export const education = [
   {
     id: 1,
-    school: "Jadavpur University",
-    url: "https://en.wikipedia.org/wiki/Jadavpur_University",
-    degree: "Bachelor Of Engineering",
+    school: "IIT BHU",
+    url: "https://en.wikipedia.org/wiki/IIT_(BHU)_Varanasi",
+    degree: "Bachelor Of Technology",
     duration: "2015 - 2019",
-    location: "Kolkata, India",
-    major: "Electronics and Telecommunication Engineering",
-    details: ["CGPA: 8.05", "Award Senior JBSNTS Scholarship"],
-  },
-  {
-    id: 2,
-    school: "Krishnath College School",
-    url: "https://en.wikipedia.org/wiki/Krishnath_College_School/",
-    degree: "Higher Secondary (WBCHSE)",
-    duration: "2013 - 2015",
-    location: "West Bengal, India",
-    major: "",
-    details: [
-      "Percentage: 94.2%",
-      "Percentile: 99.63%",
-      "Physics 100 | Maths 95 | English 92",
-      "WBJEE: 335 (GEN | Engg.) | 3351 (GEN | Med)",
-      "Also cracked IISER Kolkata and IIEST (Mechanical)",
-    ],
-  },
-  {
-    id: 3,
-    school: "Mary Immaculate School",
-    url: "https://mismsd.in/",
-    degree: "Secondary (ICSE)",
-    duration: "2013",
-    location: "West Bengal, India",
-    major: "",
-    details: [
-      "Percentage: 90%",
-      "Maths 97 | Computer Application 97 | Science 90",
-    ],
+    location: "Varanasi, India",
+    major: "Electrical Engineering",
+    details: ["CGPA: 8.05"],
   },
 ];
 

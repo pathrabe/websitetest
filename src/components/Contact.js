@@ -9,6 +9,7 @@ import {
   FaEnvelope,
   FaFileDownload,
   FaTiktok,
+  FaYoutube
 } from "react-icons/fa";
 
 const ContactSection = styled.section`
@@ -109,8 +110,9 @@ const ContactSection = styled.section`
 `;
 
 const Contact = () => {
-  const linkedinUrl = socialLinks.find((link) => link.name === "LinkedIn").url;
-  const leetCodeUrl = socialLinks.find((link) => link.name === "TikTok").url;
+  // const linkedinUrl = socialLinks.find((link) => link.name === "LinkedIn").url;
+  const tiktokUrl = socialLinks.find((link) => link.name === "TikTok").url;
+  const youtubeUrl = socialLinks.find((link) => link.name === "Youtube").url;
   const instagramUrl = socialLinks.find(
     (link) => link.name === "Instagram"
   ).url;
@@ -123,32 +125,35 @@ const Contact = () => {
         <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
           <FaInstagram /> Instagram
         </a>
-        <a href={leetCodeUrl} target="_blank" rel="noopener noreferrer">
+        <a href={tiktokUrl} target="_blank" rel="noopener noreferrer">
           <FaTiktok /> TikTok
+        </a>
+        <a href={youtubeUrl} target="_blank" rel="noopener noreferrer">
+          <FaYoutube /> Youtube
         </a>
         <a className="email-link" href={`mailto:${personalInfo.contact.email}`}>
           <FaEnvelope /> Email
         </a>
 
       </div>
-      {/* <div className="contact-links">
-        <a
+      <div className="contact-links">
+        {/* <a
           className="social-link-row2"
           href={linkedinUrl}
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaLinkedin /> LinkedIn
-        </a>
+        </a> */}
         <a
           className="social-link-row2"
           href={`${process.env.PUBLIC_URL}/resume.pdf`}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaFileDownload /> Download Résumé
+          <FaFileDownload /> Download Brochure
         </a>
-      </div> */}
+      </div>
     </ContactSection>
   );
 };

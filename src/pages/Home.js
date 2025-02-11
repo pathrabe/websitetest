@@ -10,8 +10,8 @@ import Achievements from "../components/Achievements";
 import Education from "../components/Education";
 import Contact from "../components/Contact";
 import ThemeToggle from "../components/common/ThemeToggle";
-import UncontrolledExample from "../components/Transformation";
 import Transform from "../components/Transform";
+import Media from "../components/Media";
 
 const MainContainer = styled.main`
   padding: 100px 20px;
@@ -38,10 +38,11 @@ const Home = () => (
     {/* <Projects /> */}
     <Transform />
     <Skills />
-    {/* <UncontrolledExample/> */}
+    <Contact />
+    <Media />
+    {/* <YouTubeShortsEmbed videoId="bA5JQYdCzcU"/> */}
     {/* <Achievements /> */}
     {/* <Education /> */}
-    <Contact />
   </MainContainer>
 );
 

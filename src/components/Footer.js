@@ -7,6 +7,7 @@ import {
   FaGithub,
   FaLinkedin,
   FaTwitter,
+  FaYoutube,
   FaInstagram,
   FaEnvelope,
   FaTiktok,
@@ -61,14 +62,11 @@ const Footer = () => (
       {socialLinks.map(({ id, name, url }) => {
         let Icon;
         switch (name) {
-          case "GitHub":
-            Icon = FaGithub;
+          case "Youtube":
+            Icon = FaYoutube;
             break;
           case "Email":
             Icon = FaEnvelope;
-            break;
-          case "LinkedIn":
-            Icon = FaLinkedin;
             break;
           case "Instagram":
             Icon = FaInstagram;

@@ -6,32 +6,6 @@ import { experiences } from "../data/data";
 import { personalInfo } from "../data/data";
 import { FaMapMarkerAlt, FaRegCalendarAlt } from "react-icons/fa";
 
-// const profileImages = {
-//   1: [
-//    `${process.env.PUBLIC_URL}/profile1.jpeg`,
-//      `${process.env.PUBLIC_URL}/profile2.jpeg`,
-//      `${process.env.PUBLIC_URL}/profile3.jpeg`,
-//   ],
-//   2: [
-//     `${process.env.PUBLIC_URL}/profile1.jpeg`,
-//       `${process.env.PUBLIC_URL}/profile2.jpeg`,
-//       `${process.env.PUBLIC_URL}/profile3.jpeg`,
-//    ],
-//    3: [
-//     `${process.env.PUBLIC_URL}/profile1.jpeg`,
-//       `${process.env.PUBLIC_URL}/profile2.jpeg`,
-//       `${process.env.PUBLIC_URL}/profile3.jpeg`,
-//    ],
-// };
-
-// function ProfileImage() {
-//   const [currentImage, setCurrentImage] = useState(0);
-
-//   const changeImage = () => {
-//     setCurrentImage((prev) => (prev + 1) % profileImages.length);
-//   }
-// };
-
 const profileImages = {
   1: `${process.env.PUBLIC_URL}/profile1.jpeg`,
   2: `${process.env.PUBLIC_URL}/profile2.jpeg`,
@@ -51,7 +25,7 @@ function ProfileImage({ id }) {
   };
 };
 
-console.log(profileImages[1])
+// console.log(profileImages[1])
 
 const ExperienceSection = styled.section`
   max-width: 1100px;

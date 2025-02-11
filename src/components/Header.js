@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { navLinks, personalInfo } from "../data/data";
 import ThemeToggle from "./common/ThemeToggle";
+import { FaFileDownload } from "react-icons/fa";
 
 const HeaderContainer = styled.header`
   width: 100%;
@@ -23,7 +24,7 @@ const HeaderContainer = styled.header`
 
   .nav-links {
     margin-top: 50px;
-    width: 100%;
+    width: 70%;
 
     ul {
       list-style: none;
@@ -60,11 +61,12 @@ const HeaderContainer = styled.header`
       color: ${({ theme }) => theme.colors.primary};
       border: 1px solid ${({ theme }) => theme.colors.primary};
       border-radius: ${({ theme }) => theme.borderRadius};
-      padding: 0.75rem 1rem;
+      padding: 0.75rem 1.25rem;
       font-size: ${({ theme }) => theme.fontSizes.sm};
       font-family: ${({ theme }) => theme.fonts.mono};
       text-decoration: none;
       cursor: pointer;
+      align-items: center;
       transition: ${({ theme }) => theme.transition};
 
       &:hover,
@@ -148,7 +150,7 @@ const Header = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Download Brochure
+          <FaFileDownload /> Download Brochure
         </a>
       </div>
       <div className="theme-toggle">

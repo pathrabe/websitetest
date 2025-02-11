@@ -3,12 +3,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { achievements } from "../data/data";
-import { Slideshow } from "../data/data";
 import Card from "./common/Card";
 import Button from "./common/Button";
-// import React from "react";
-import Carousel from "react-bootstrap/Carousel";
-import ExampleCarouselImage from "./ExampleCarouselImage";
 
 const AchievementsSection = styled.section`
   max-width: 1100px;
@@ -71,29 +67,6 @@ const TransformCard = styled(Card)`
       }
 `;
 
-// const images = [
-//   `${process.env.PUBLIC_URL}/profile1.jpeg`,
-//   `${process.env.PUBLIC_URL}/profile2.jpeg`,
-//   `${process.env.PUBLIC_URL}/profile3.jpeg`,
-//   `${process.env.PUBLIC_URL}/profile.jpg`,
-// ];
-
-// const [currentIndex, setCurrentIndex] = useState(0);
-
-// // Function to go to the next image
-// const nextSlide = () => {
-//   setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-// };
-
-// // Function to go to the previous image
-// const prevSlide = () => {
-//   setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-// };
-
-// useEffect(() => {
-//   const interval = setInterval(nextSlide, 3000);
-//   return () => clearInterval(interval); // Cleanup interval on unmount
-// }, []);
 
 const Achievements = () => {
   const [showMore, setShowMore] = useState(false);

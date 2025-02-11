@@ -11,7 +11,7 @@ const ToggleContainer = styled.div`
   cursor: pointer;
 
   .toggle-label {
-    flex: 1;
+    flex: 0.6;
     margin-right: 10px;
     color: ${({ theme }) => theme.colors.text};
     font-size: 16px;

@@ -1,8 +1,74 @@
+// import styled from "styled-components";
+
+// const ExperienceSec = styled.section`
+//     max-width: 1100px;
+//     margin: 100px auto;
+//     padding: 0 20px;
+
+//     h2 {
+//         font-size: 32px;
+//         margin-bottom: 50px;
+//         color: ${({ theme }) => theme.colors.text};
+//         text-align: center;
+//     }
+
+
+    
+// `;
+
+// const ExperienceLi = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   gap: 40px;
+//   padding: 0;
+
+// .shorts-container {
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         width: 100%;
+//         max-width: 400px; /* Adjust width */
+//         margin: auto;
+//     }
+    
+//     .shorts-container iframe {
+//         width: 75%;
+//         height: 500px; /* Shorts aspect ratio */
+//         border-radius: 10px;
+//     }
+
+// `;
+
+
+// const YouTubeShortsEmbed = ({ videoId, width = "360", height = "640" }) => {
+//     return (
+//         <ExperienceSec >
+//             <h2>This is my story 💪🏻</h2>
+//             <ExperienceLi>
+//             <div className="shorts-container">
+//                 <iframe
+//                 width={width}
+//                 height={height}
+//                 src={`https://www.youtube.com/embed/${videoId}`}
+//                 title="YouTube Shorts Player"
+//                 frameBorder="0"
+//                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//                 allowFullScreen
+//                 ></iframe>
+//             </div>
+//             </ExperienceLi>
+//         </ExperienceSec>
+//     );
+//   };
+  
+//   export default YouTubeShortsEmbed;
+
+
 // src/components/Projects.js
 
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { projects } from "../data/data";
+import { media } from "../data/data";
 import { FaInstagram } from "react-icons/fa";
 import Card from "./common/Card";
 import Button from "./common/Button";
@@ -48,6 +114,8 @@ const ProjectCard = styled(Card)`
       margin-bottom: 10px;
     }
     .project-links {
+        position: relative;
+        z-index: 2;
       a {
         color: ${({ theme }) => theme.colors.primary};
         font-size: 23px;
@@ -75,29 +143,31 @@ const ProjectCard = styled(Card)`
     margin-bottom: 20px;
   }
 
-  // .project-tech {
-  //   flex: 1;
-  //     position: relative;
-  //     overflow: visible;
-  //     cursor: pointer;
-  //     outline: none;
+//   .project-tech {
+//     flex: 1;
+//       position: relative;
+//       overflow: visible;
+//       justify-content: center;  /* Centers horizontally */
+//         align-items: center;  /* Centers vertically (if needed) */
+//       cursor: pointer;
+//       outline: none;
 
-  //     img {
-  //       width: 350px;
-  //       height: 400px;
-  //       display: block;
-  //       object-fit: cover;
-  //       border-radius: 10px;
-  //       margin-left: 65px;
-  //       transition: transform 0.3s ease, box-shadow 0.3s ease;
-  //       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+//       img {
+//         width: 350px;
+//         height: 400px;
+//         display: block;
+//         object-fit: cover;
+//         border-radius: 10px;
+//         margin-left: 65px;
+//         transition: transform 0.3s ease, box-shadow 0.3s ease;
+//         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 
-  //       &:hover,
-  //       &:focus {
-  //         box-shadow: 0 0 50px 15px ${({ theme }) => theme.colors.profileGlow};
-  //         transform: translateY(-5px);
-  //       }
-  //     }
+//         &:hover,
+//         &:focus {
+//           box-shadow: 0 0 50px 15px ${({ theme }) => theme.colors.profileGlow};
+//           transform: translateY(-5px);
+//         }
+//       }
     .project-tech {
         position: relative;
         display: flex;
@@ -108,6 +178,11 @@ const ProjectCard = styled(Card)`
         cursor: pointer;
         outline: none;
         width: 100%; /* Ensures full-width for centering */
+
+        iframe {
+            z-index: 1; /* Keeps iframe below other elements */
+            pointer-events: auto; /* Ensures iframe works */
+        }
 
         img {
             width: 350px;
@@ -127,7 +202,7 @@ const ProjectCard = styled(Card)`
     }
 `;
 
-const Transform = () => {
+const Media = () => {
   const [showMore, setShowMore] = useState(false);
   const [initialProjectsToShow, setInitialProjectsToShow] = useState(4);
 
@@ -146,8 +221,8 @@ const Transform = () => {
   }, []);
 
   const projectsToShow = showMore
-    ? transform
-    : transform.slice(0, initialProjectsToShow);
+    ? media
+    : media.slice(0, initialProjectsToShow);
 
   const handleShowMore = () => {
     setShowMore(!showMore);
@@ -155,7 +230,7 @@ const Transform = () => {
 
   return (
     <ProjectsSection id="projects">
-      <h2>Transformation 🗝️</h2>
+      <h2>This is my story 🔊</h2>
       <ProjectsGrid>
         {projectsToShow.map(
           ({ id, transformImages, title, description, techStack, url, external }) => (
@@ -190,28 +265,21 @@ const Transform = () => {
               </div>
               <div className="project-description">{description}</div>
               <div className="project-tech">
-              {transformImages && transformImages.length > 0 ? (
-                <Carousel>
-                  {transformImages.map((image, idx) => (
-                      <Carousel.Item key={idx} tabIndex="0">
-                      <img
-                          tabIndex="0"
-                          src={image}
-                          alt={`Transformation ${idx + 1}`}
-                          // style={{ width: "100%", height: "auto", borderRadius: "10px" }}
-                      />
-                      </Carousel.Item>
-                  ))}
-                </Carousel>
-              ) : (
-                <p>No images available</p>
-              )}
+                <iframe
+                    width="360"
+                    height="640"
+                    src={url}
+                    title="YouTube Shorts Player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    ></iframe>
               </div>
             </ProjectCard>
           )
         )}
       </ProjectsGrid>
-      {projects.length > initialProjectsToShow && (
+      {media.length > initialProjectsToShow && (
         <Button onClick={handleShowMore}>
           {showMore ? "Show Less" : "Show More"}
         </Button>
@@ -220,4 +288,4 @@ const Transform = () => {
   );
 };
 
-export default Transform;
+export default Media;
