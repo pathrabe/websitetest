@@ -206,7 +206,7 @@ export const media = [
   },
   {
     id: 2,
-    title: "The Demon Back 🦍",
+    title: "Flex Worldwide 🌎",
     description:
       "Average to unstoppable - all the way up !",
     // transformImages: [
@@ -215,7 +215,7 @@ export const media = [
     //   `${process.env.PUBLIC_URL}/back1.jpeg`,
     //   `${process.env.PUBLIC_URL}/back2.jpeg`,
     // ],
-    url: "https://www.youtube.com/embed/bA5JQYdCzcU",
+    url: "https://www.youtube.com/embed/HjoAofJmeR0",
   },
 ];
 
